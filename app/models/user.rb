@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
   validates :email, presence: true
   validates :password_hash, presence: true
   
-  has_namy :events, dependent: :destroy
+  has_many :events, dependent: :destroy
 
   include BCrypt
   def password

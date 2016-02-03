@@ -1,3 +1,13 @@
-<h1>Welcome</h1>
-<p> This is the home page of the volunteer bulletin! </p>
+<% if logged_in? %>
+  <h2 style="color:black"> <%= current_user.name %>'s Dashboard </h2>
+  <%= render :partial => 'users/dash' %>
+<% else %>
+  <h1> Welcome to Penn Civic Service! </h1>
+  <p>
+    Created by Joseph Gao and Adam Domingoes. Design by Tiffany Chang (is that her last name idk). 
+  </p>
+  <h2> Log in </h2>
+  <%= render :partial => 'sessions/new' %>
+  <p> Don't have an account? <a href='/users/new'> Sign up! </a>
+<% end %>
 
