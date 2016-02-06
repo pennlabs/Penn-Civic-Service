@@ -1,12 +1,14 @@
 <nav class="nav">
-  <a class="nav__item" href="/">Home</a>
+  <a class="nav__item" href="/">Penn Civic Service</a>
   <a class="nav__item" href="/about">About</a>
   <a class="nav__item" href="/users">Users</a>
-  <a class="nav__item" href="/events">Events</a>
+
   <!-- Add link to user's show page and log out button if logged in -->
   <% if false %>
   <% if logged_in? and current_user.id == session[:user_id]%>
-    <a class="nav__item"> <%= link_to 'Profile', current_user %> </a>
+    <a class="nav__item" href="/events">Opportunities</a>
+   <a class="nav__item" href="/events/new">Create a Post</a>
+    <a class="nav__item"> <%= link_to 'My Profile', current_user %> </a>
     <a class="nav__item"> <%= link_to 'Log out', '/logout', method: :delete, data: { confirm: 'Are you sure?' } %> </a>
   <% else %>
     <% if logged_in? %>

@@ -1,9 +1,16 @@
 class User < ActiveRecord::Base
-  validates :name, presence: true
-  validates :name, length: { minimum: 2 } 
-  validates_uniqueness_of :name
+  validates :username, presence: true
+  validates :username, length: { minimum: 2 } 
+  validates_uniqueness_of :username
   validates :email, presence: true
   validates :password_hash, presence: true
+  validates :org_name, presence: true
+  validates :org_url, presence: true
+  validates :org_phone, presence: true
+  validates :org_address, presence: true
+  validates :city, presence: true
+  validates :state, presence: true
+  validates :zipcode, presence: true
   
   has_many :events, dependent: :destroy
 
