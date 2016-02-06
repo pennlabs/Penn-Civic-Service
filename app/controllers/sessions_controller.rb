@@ -4,7 +4,7 @@ class SessionsController < ApplicationController
   include BCrypt
 
   def create
-    @user = User.find_by(name: params[:name])
+    @user = User.find_by(username: params[:username])
     if @user && @user.password == params[:password]
       session[:user_id] = @user.id
       redirect_to '/'
