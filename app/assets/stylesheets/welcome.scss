@@ -1,3 +1,26 @@
-// Place all the styles related to the welcome controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+form {
+    text-size: 12 pt;
+}
+input {
+    border-radius: 6px;
+    padding: 4px;
+}
+.formStyle {
+    width: 250px;
+    background: #00916A;
+    padding: 5px;
+    border-radius: 9px;
+    border-right: solid 4px #191C2F;
+    border-bottom: solid 4px #191C2F;
+}
+body {
+    background-color: #F2F2F2;
+}
+input[type="submit"]{
+    background: #F24901;
+    border: 1px solid #F24901;
+    color: white;
+    width: 25%;
+    border-radius: 20px;
+
+}
