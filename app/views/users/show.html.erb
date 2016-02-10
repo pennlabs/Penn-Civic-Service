@@ -1,5 +1,16 @@
 <p id="notice"><%= notice %></p>
-<h1> Welcome to <%= current_user %>'s profile </h1>
-<p> Nothing to see here either. </p>
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+<% if logged_in? %>
+  <h1> Welcome,  <%= current_user.org_name %>.  </h1>
+  Username: <%= current_user.username %> <br>
+  Email: <a href='<%= current_user.email %>'> <%= current_user.email %> </a> <br>
+   Website: <a href='<%=current_user.org_url%>'> <%= current_user.org_url %> </a> <br>
+   Phone: <%= current_user.org_phone %> <br>
+   Address: <%= current_user.org_address %> <br>
+   <%= current_user.city %> <%= current_user.state %> <%= current_user.zipcode %> 
+
+  <br> <br>
+  <%= link_to 'Edit', edit_user_path(@user) %> |
+  <%= link_to 'Back', users_path %>
+<% else %>
+  <h1> Please log in! </h1>
+<% end %>

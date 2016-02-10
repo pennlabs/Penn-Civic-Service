@@ -8,6 +8,7 @@ class CreateEvents < ActiveRecord::Migration
       t.string :location
       t.string :url
       t.string :deadline
+      t.string :cause_type
       t.references :user, index: true, foreign_key: true
       t.timestamps null: false
     end

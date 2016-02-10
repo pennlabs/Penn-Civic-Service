@@ -33,6 +33,60 @@
   <div>
     <%= f.label :url %>
     <%= f.text_field :url %>
+  </div>
+  <div>
+    <%= f.label :deadline %>
+    <%= f.text_field :deadline %>
+  </div>
+  <div>
+    <p> What type of cause is this event? </p>
+    <%= fields_for :cause_type do |c| %>
+      Advocacy &amp; Humanities
+      <%= c.check_box :adv_and_hum %>
+      <br>
+      Animals
+      <%= c.check_box :animals %>
+      <br>
+      Arts &amp; Culture
+      <%= c.check_box :art_culture %>
+      <br>
+      Children &amp; Youth
+      <%= c.check_box :youth %>
+      <br>
+      Community
+      <%= c.check_box :community %>
+       <br>
+      Disaster Relief
+      <%= c.check_box :disaster %>
+      <br>
+      Education &amp; Literacy
+      <%= c.check_box :education %>
+      <br>
+      Environment
+      <%= c.check_box :environment %>
+      <br>
+      Health &amp; Medicine
+      <%= c.check_box :heatlh %>
+      <br>
+      Homeless &amp; Housing
+      <%= c.check_box :housing %>
+      <br>
+      International
+      <%= c.check_box :international %>
+      <br>
+      Justice &amp; Legal
+      <%= c.check_box :legal %>
+      <br>
+      LGBT
+      <%= c.check_box :lgbt %>
+      <br>
+      People with Disabilities
+      <%= c.check_box :disabilities %>
+      <br>
+      Sports
+      <%= c.check_box :sports %>
+   <% end %>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>

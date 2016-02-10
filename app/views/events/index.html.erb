@@ -2,27 +2,18 @@
 
 <h1>Listing Events</h1>
 
-<table>
-  <thead>
-    <tr>
-      <td> Title </td>
-      <td> Description </td>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @events.each do |event| %>
-      <tr>
-        <td><%= event.title %> </td>
-        <td><%= event.description %> </td>
-        <td><%= link_to 'Show', event %></td>
-        <td><%= link_to 'Edit', edit_event_path(event) %></td>
-        <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
+<% @events.each do |event| %>
+  <ul>
+    <li> 
+      Title: <%= link_to event.title, event %> <br> 
+      Date: <%= event.date %> <br>
+      Time: <%= event.time %> <br>
+      At: <%= event.location %> <br>
+      Description: <%= event.description %> <br>
+      Deadline: <%= event.deadline %> <br>
+      Website: <a href='<%= event.url %>'> <%= event.url %> </a>
+    </li>
+  </ul>
+<% end %>
+<h2> Have an event in mind? Create a post for it! </h2>
 <%= link_to 'New Event', new_event_path %>
