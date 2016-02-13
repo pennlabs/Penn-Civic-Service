@@ -8,9 +8,21 @@
    Address: <%= current_user.org_address %> <br>
    <%= current_user.city %> <%= current_user.state %> <%= current_user.zipcode %> 
 
-  <br> <br>
-  <%= link_to 'Edit', edit_user_path(@user) %> |
-  <%= link_to 'Back', users_path %>
+   <h1> My Events </h1>
+   <% current_user.events.each do |event| %>
+     <ul>
+       <li>
+          Title: <%= link_to event.title, event %> <br> 
+          Date: <%= event.date %> <br>
+          Time: <%= event.time %> <br>
+          At: <%= event.location %> <br>
+          Description: <%= event.description %> <br>
+          Deadline: <%= event.deadline %> <br>
+          Website: <a href='http://<%= event.url %>'> <%= event.url %> </a>
+       </li>
+     </ul>
+   <% end %>
+
 <% else %>
   <h1> Please log in! </h1>
 <% end %>
