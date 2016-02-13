@@ -1,6 +1,9 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Listing Events</h1>
+<% if @events.empty? %>
+    No events! 
+<% end %> 
 
 <% @events.each do |event| %>
   <ul>
@@ -15,5 +18,4 @@
     </li>
   </ul>
 <% end %>
-<h2> Have an event in mind? Create a post for it! </h2>
-<%= link_to 'New Event', new_event_path %>
+
