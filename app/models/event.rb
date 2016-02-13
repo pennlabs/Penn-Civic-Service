@@ -6,7 +6,7 @@ class Event < ActiveRecord::Base
   validates :time, presence: true
   validates :location, presence: true
   validates :url, presence: true
-  serialize :tags, Hash
+  serialize :cause_type, Hash
 
   belongs_to :user
 end
