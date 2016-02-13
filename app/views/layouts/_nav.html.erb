@@ -1,18 +1,35 @@
-<nav class="nav">
-  <a class="nav__item" href="/">Penn Civic Service</a>
-  <a class="nav__item" href="/about">About</a>
-  <a class="nav__item" href="/users">Users</a>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+<nav id="mainnav" class="navbar navbar-default">
+    <div class="container-fluid">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+    </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+              <ul class="nav navbar-nav">
+                <li class="active"><a href="/">Penn Civic Service<span class="sr-only">(current)</span></a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/users">Users</a></li>
 
-  <!-- Add link to user's show page and log out button if logged in -->
-  <% if logged_in? and current_user.id == session[:user_id]%>
-    <a class="nav__item" href="/events">Opportunities</a>
-   <a class="nav__item" href="/events/new">Create a Post</a>
-    <a class="nav__item"> <%= link_to 'My Profile', current_user %> </a>
-    <a class="nav__item"> <%= link_to 'Log out', '/logout', method: :delete, data: { confirm: 'Are you sure?' } %> </a>
-  <% else %>
+<% if logged_in? and current_user.id == session[:user_id]%>
+                <li><a href="/events">Opportunities</a></li>
+                <li><a href="/events/new">Create a Post</a></li>
+                <li><%= link_to 'Profile', current_user %></li>
+                <li><%= link_to 'Log Out', '/logout', method: :delete, data: { confirm: 'Are you sure?' } %></li>
+<% else %>
     <% if logged_in? %>
-    <a class="nav__item"> <%= link_to 'Profile', current_user %> </a>
-    <a class="nav__item">  <%= link_to 'Log out', '/logout', method: :delete, data: { confirm: 'Are you sure?' } %> </a>
+                <li><%= link_to 'Profile', current_user %></li>
+                <li><%= link_to 'Log Out', '/logout', method: :delete, data: { confirm: 'Are you sure?' } %></li>
     <% end %>
-  <% end %>
+<% end %>
+                </ul>
+              <form class="navbar-form navbar-left" role="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" placeholder="Search"/>
+                </div>
+                <button style="margin-left: -40px;" type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
+              </form>
+          </div>
 </nav>
+
