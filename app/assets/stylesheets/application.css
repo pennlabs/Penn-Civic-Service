@@ -14,5 +14,9 @@
  *= require_self
  */
 
-#mainnav{
+#mainnav {
+    background: #FFFFFF;
+    font: 1.3em;
+    color: black;
+    font-weight: bold;
 }
