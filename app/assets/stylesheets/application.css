@@ -1,6 +1,3 @@
-#mainnav {
-}
-
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
@@ -16,3 +13,10 @@
  *= require_tree .
  *= require_self
  */
+
+#mainnav {
+    background: #FFFFFF;
+    font: 1.3em;
+    color: black;
+    font-weight: bold;
+}
