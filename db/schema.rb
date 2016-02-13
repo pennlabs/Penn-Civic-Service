@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 20160126003212) do
     t.string   "location"
     t.string   "url"
     t.string   "deadline"
+    t.string   "cause_type"
     t.integer  "user_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
