@@ -2,7 +2,7 @@ Penn Volunteer Bulletin
 A volunteer job board for Penn students by Penn Labs.
 
 # Setting Up
-- install RVM (instructions can be found [here])(https://rvm.io/rvm/install)
+- install RVM (instructions can be found [here](https://rvm.io/rvm/install))
 - install bundler (`gem install bundler`)
 - install rails (`gem install rails`)
 - clone the project with `git clone https://github.com/pennlabs/Penn-Civic-Service.git`
