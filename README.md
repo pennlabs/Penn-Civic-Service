@@ -1,7 +1,19 @@
 Penn Volunteer Bulletin
+A volunteer job board for Penn students by Penn Labs.
 
-# Timetable of features
-- set up database models
-- get login working
-- allow new user creation
-- allow job creations
+# Setting Up
+- install RVM (instructions can be found [here](https://rvm.io/rvm/install)
+- install bundler (`gem install bundler`)
+- install rails (`gem install rails`)
+- `git clone https://github.com/pennlabs/Penn-Civic-Service.git`
+- install all the project dependencies (`bundle install`)
+- migrate the database (`rake db:migrate`)
+- finally, run `rails s`
+- after doing all the setup instructions and running rails s, navigate to localhost:3000
+
+# DB Management
+- if you ever need to reset your database, just do `rake db:drop`
+- make sure to migrate after each drop/change to the schema
+
+# Contributors
+- Joseph Gao, Adam Domingoes, the development team at [Penn Labs](http://pennlabs.org/#team)
