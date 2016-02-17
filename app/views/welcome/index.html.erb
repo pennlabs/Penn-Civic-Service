@@ -1,13 +1,13 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
-<% form_tag("/newSignup", method: "post" do %>
+<% form_tag("/newSignup", method: "post") do %>
   <%= label_tag(:first_name, "First name") %> 
   <%= text_field_tag(:first_name, "First name") %>
   <%= label_tag(:last_name, "Last name") %>
   <%= text_field_tag(:last_name, "Last name") %>
   <%= label_tag(:username) %>
   <%= text_field_tag(:username, "Username") %>
-  <%+ label_tag(:password) %>
+  <%= label_tag(:password) %>
   <%= password_field_tag(:password, "Password") %>
   <div style="max-width:300px">
     <%= submit_tag("Sign up!") %> 
