@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :events
   resources :users
   get '/about' => 'welcome#about'
+  post '/newSignup' => 'users#signup'
 
   # sessions
   post '/login' => 'sessions#create'
