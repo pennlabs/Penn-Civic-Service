@@ -19,6 +19,7 @@
     font: 1.3em;
     color: black;
     font-weight: bold;
+    border-bottom: 5px solid #D1D1D0;
 }
 #body{
     background-color: #D1D1D0;
