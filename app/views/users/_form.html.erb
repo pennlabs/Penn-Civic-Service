@@ -12,6 +12,7 @@
   <% end %>
   <div class="field">
     <%= f.label :username %> <br>
+    <% if @fn %>
     <%= f.text_field :username %>
   </div>
   <div class = "field">
@@ -21,6 +22,8 @@
   <div class="field">
     <%= f.label :password %> <br>
     <%= f.password_field :password%>
+    Confirm Password
+    <%= f.password_field :password_confirm %>
   </div>
   <div class="field">
     <%= f.label :org_name %> <br>
