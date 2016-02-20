@@ -1,14 +1,18 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-
-<%= form_tag("/newSignup", method: "post") do %>
-  <%= label_tag(:first_name, "First name") %> 
-  <%= text_field_tag(:first_name, nil, placeholder: "First name") %>
-  <%= label_tag(:last_name, "Last name") %>
-  <%= text_field_tag(:last_name, nil, placeholder: "Last name") %>
-  <%= label_tag(:username) %>
-  <%= text_field_tag(:username, nil, placeholder: "Username") %>
-  <%= label_tag(:pass) %>
-  <%= password_field_tag(:pass, nil, placeholder: "Password") %>
-  <a href="/login">Login </a>
-  <%= submit_tag("Sign up!") %> 
+<% if !logged_in? %>
+  <%= form_tag("/signup", method: "post") do %>
+    <%= label_tag(:first_name, "First name") %> 
+    <%= text_field_tag(:first_name, nil, placeholder: "First name") %>
+    <%= label_tag(:last_name, "Last name") %>
+    <%= text_field_tag(:last_name, nil, placeholder: "Last name") %>
+    <%= label_tag(:username) %>
+    <%= text_field_tag(:username, nil, placeholder: "Username") %>
+    <%= label_tag(:pass) %>
+    <%= password_field_tag(:pass, nil, placeholder: "Password") %>
+    <a href="/login">Login </a>
+    <%= submit_tag("Sign up!") %> 
+  <% end %> 
+<% else %> 
+  <h1> Welcome to the dashboard! </h1>
 <% end %> 
+

@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  validates :firstname, presence: true
+  validates :lastname, presence: true
   validates :username, presence: true
   validates :username, length: { minimum: 2 } 
   validates_uniqueness_of :username
