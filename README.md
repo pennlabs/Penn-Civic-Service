@@ -15,5 +15,8 @@ A volunteer job board for Penn students by Penn Labs.
 - if you ever need to reset your database, just do `rake db:drop`
 - make sure to migrate after each drop/change to the schema
 
+# Configuraitons
+- run `rake routes` to see all the current routes
+
 # Contributors
 - Joseph Gao, Adam Domingoes, the development team at [Penn Labs](http://pennlabs.org/#team)
