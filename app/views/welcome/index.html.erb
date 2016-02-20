@@ -5,12 +5,10 @@
   <%= text_field_tag(:first_name, nil, placeholder: "First name") %>
   <%= label_tag(:last_name, "Last name") %>
   <%= text_field_tag(:last_name, nil, placeholder: "Last name") %>
-  <%= label_tag(:user) %>
-  <%= text_field_tag(:user, nil, placeholder: "Username") %>
+  <%= label_tag(:username) %>
+  <%= text_field_tag(:username, nil, placeholder: "Username") %>
   <%= label_tag(:pass) %>
   <%= password_field_tag(:pass, nil, placeholder: "Password") %>
-  <div style="max-width:300px">
-    <a href="/login">Login </a>
-    <%= submit_tag("Sign up!") %> 
-  </div>
+  <a href="/login">Login </a>
+  <%= submit_tag("Sign up!") %> 
 <% end %> 
