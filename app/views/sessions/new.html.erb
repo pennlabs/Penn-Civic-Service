@@ -1,5 +1,7 @@
+<div style="position: relative; transform: translateY(-40%); top: 30%; transform: translateX(40%);">
 <div class="formStyle">
-<%= form_tag('/login') do %>
+    <%= form_tag('/login') do %>
+  <center>
   <br>  
   <div>
     <%= text_field_tag :username, nil, placeholder: 'Username' %>
@@ -14,6 +16,7 @@
     <%= submit_tag "Log in" %>
   </div>
   <br>
-
+  </center>
 <% end %>
+</div>
 </div>

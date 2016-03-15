@@ -1,12 +1,12 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-<nav id="mainnav" class="navbar navbar-default" style="padding: 0px; margin: 0px;">
-    <div class="container-fluid">
+<nav id="mainnav" class="navbar navbar-default" style="padding: 0px; margin: 0px; text-align: left;">
+    <div>
         <span class="sr-only">Toggle navigation</span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
     </div>
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    <div>
       <ul class="nav navbar-nav">
         <li><a href="/">Penn Civic Service</a></li>
         <li><a href="/about">About</a></li>
@@ -22,21 +22,11 @@
                 <li><%= link_to 'Log Out', '/logout', method: :delete, data: { confirm: 'Are you sure?' } %></li>
     <% end %>
 <% end %>
-                </ul>
-              <form class="navbar-form navbar-left" role="search">
-                  <div class="form-group">
-                      <table>
-                          <tr>
-                              <td>   
-                                <input style="" type="text" class="form-control" placeholder="Search"/>
-                              </td>
-                              <td>
-                                 <button style="margin-left: -40px;" type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
-                              </td>
-                        </tr>
-                     </table>
-                  </div>
-               </form>
+                <form id="tfnewsearch" method="get" style="vertical-align: middle">
+                    <input type="text" class="tftextinput" size="21" maxlength="120" style="height: 30%; border: 1px black solid; border-radius: 10px;">
+                    <button type="submit" class="tfbutton" style="text-align: center; margin-left: -40px; border-top: 1px black solid; border-radius: 10px; border-bottom: 1px black solid; border-right: 1px black solid; border-bottom-left-radius: 0px; border-top-left-radius: 0px;"><i class="fa fa-search"></i></button>
+                </form>
+            </ul>
           </div>
 </nav>
 
