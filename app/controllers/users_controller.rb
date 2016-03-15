@@ -68,17 +68,8 @@ class UsersController < ApplicationController
       @user = User.find(params[:id])
     end
 
-    def signup
-      @fn = params[:first_name]
-      @ln = params[:last_name]
-      @user = params[:username]
-      @pass = params[:pass]
-      render :new
-    end
-
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
       params.require(:user).permit(:username, :email, :password, :org_name, :org_url, :org_phone, :org_address, :city, :state, :zipcode)
-      params.permit(id: [:first_name, :last_name, :username, :password])
     end
 end

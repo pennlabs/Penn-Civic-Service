@@ -3,5 +3,12 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 input[type="text"] {
-    height: 8px;
+    height: 27px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+}
+input[type="password"] {
+    height: 27px;
+    margin-bottom: 15px;
+    border-radius: 8px;
 }

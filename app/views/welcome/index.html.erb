@@ -1,14 +1,42 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-<% form_tag("/newSignup", method: "post") do %>
-  <%= label_tag(:first_name, "First name") %> 
-  <%= text_field_tag(:first_name, "First name") %>
-  <%= label_tag(:last_name, "Last name") %>
-  <%= text_field_tag(:last_name, "Last name") %>
-  <%= label_tag(:user) %>
-  <%= text_field_tag(:user, "Username") %>
-  <%= label_tag(:pass) %>
-  <%= password_field_tag(:pass, "Password") %>
-  <div style="max-width:300px">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+<div>
+    <div style = "float: left; width:50%; height: 400px; background-color: #1ABC9C">
+        <center><p style="padding-top: 120px; font-size: 26pt; color: #FFFFFF">Be a friend. Lend a hand.</p></center>
+            <center><%= image_tag('Icons/hands.png', :style => "padding-top: 76px; width: 250px; height: auto")%></center>
+    </div>
+<div style = "float: right; width:50%; height: 400px; background-color: #16A085;">
+    <div class="center" style="text-align: right">
+        <center><p style="color: white; width: 200px; font-size: 16pt;">Sign up to post your opportunities today.</p></center>
+        <br>
+        <center style="">
+<%= form_tag("/newSignup", method: "post") do %>
+  <%= text_field_tag(:first_name, nil, placeholder: "First name") %>
+  <br>
+  <%= text_field_tag(:last_name, nil, placeholder: "Last name") %>
+  <br>
+  <%= text_field_tag(:user, nil, placeholder: "Username") %>
+  <br>
+  <%= password_field_tag(:pass, nil, placeholder: "Password") %>
+  <br>
+  <div style="min-width: 200px;">
+    <a style="min-width: 100px" href="/login">Login</a>
     <%= submit_tag("Sign up!") %> 
   </div>
-<% end %> 
+    </div>
+<% end %>
+    </center>
+</div>
+</div>
+<div style="display: inline-block; width: 100%; min-height: 215px; background-color: #FFFFFF;">
+    <br>
+    <span style = "padding-left: 30px; padding-top: 20px; color: #F24901; font-size: 14pt;"><strong>Start your search here ...</strong></span>
+    <div style="width: 100%; padding-top: 10px;">
+        <span class="paddSpan"><%= image_tag('Icons/community.png', :alt => "rss feed", :class => "icons")%></span>
+        <span class="paddSpan"><%= image_tag('Icons/hunger.png', :alt => "rss feed", :class => "icons")%></span>
+        <span class="paddSpan"><%= image_tag('Icons/woman.png', :alt => "rss feed", :class => "icons")%></span>
+        <span class="paddSpan"><%= image_tag('Icons/animal.png', :alt => "rss feed", :class => "icons")%></span>
+        <span class="paddSpan"><%= image_tag('Icons/education.png', :alt => "rss feed", :class => "icons")%></span>
+    </div>
+</div>
+
