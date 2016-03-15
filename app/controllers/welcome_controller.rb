@@ -10,9 +10,9 @@ class WelcomeController < ApplicationController
   def signup
     @fn = params[:first_name]
     @ln = params[:last_name]
-    @user = params[:username]
+    @username = params[:username]
     @pass = params[:pass]
-    render :template => "users/new"
+    redirect_to url_for(controller: 'users', :action => :new, :fn => "#{@fn}", :ln => "#{@ln}", :user => "#{@username}", :pass => "#{@pass}")
   end
 
 end

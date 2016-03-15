@@ -11,53 +11,62 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :username %> <br>
-    <% if @fn %>
-      <%= f.text_field :username, :value => @fn %>
-    <% else %>
-      <%= f.text_field :username, :value => @fn %>
-    <% end %>
+    <%= f.label :firstname %> <br>
+    <%= f.text_field :firstname, :value => params[:fn], :placeholder => "First name" %>
   </div>
-  <div class = "field">
-    <%= f.label :email %> <br>
-    <%= f.email_field :email %>
+  <div class="field">
+    <%= f.label :lastname %> <br>
+    <%= f.text_field :lastname, :value => params[:ln], :placeholder => "Last name" %>
+  </div>
+  <div class="field">
+    <%= f.label :username %> <br>
+    <%= f.text_field :username, :value => params[:user], :placeholder => "Username" %>
   </div>
   <div class="field">
     <%= f.label :password %> <br>
-    <%= f.password_field :password%>
-    Confirm Password
-    <%= f.password_field :password_confirm %>
+    <%= f.password_field :password, :value => params[:pass], :placeholder => "Password" %> <br> 
+    <%= f.password_field :password_confirm, :placeholder => "Confirm Password" %>
+  </div>
+  <div class = "field">
+    <%= f.label :email %> <br>
+    <%= f.email_field :email, :placeholder => "Email" %>
   </div>
   <div class="field">
     <%= f.label :org_name %> <br>
-    <%= f.text_field :org_name %>
+    <%= f.text_field :org_name, :placeholder => "Organization Name" %>
   </div> 
   <div class="field">
     <%= f.label :org_url %> <br>
-    <%= f.text_field :org_url %>
+    <%= f.text_field :org_url, :placeholder => "Url"  %>
   </div>
   <div class="field">
     <%= f.label :org_phone %> <br>
-    <%= f.text_field :org_phone %>
+    <%= f.text_field :org_phone, :placeholder => "Phone"  %>
   </div>
   <div class="field">
     <%= f.label :org_address %> <br>
-    <%= f.text_field :org_address %>
+    <%= f.text_field :org_address, :placeholder => "Street Address"  %>
   </div>
   <div class="field">
     <%= f.label :city %> <br>
-    <%= f.text_field :city %>
+    <%= f.text_field :city, :placeholder => "City" %>
   </div> 
   <div class="field">
     <%= f.label :state %> <br>
-    <%= f.text_field :state %>
+    <%= f.text_field :state, :placeholder => "State" %>
   </div> 
   <div class="field">
     <%= f.label :zipcode %> <br>
+<<<<<<< HEAD
     <%= f.text_field :zipcode %>
 </div> 
 </tr>
 </table>
+=======
+    <%= f.text_field :zipcode, :placeholder => "Zipcode" %>
+  </div> 
+
+>>>>>>> 639aac069beab99a93a99888ea7dd4498074568c
   <div class="actions">
     <%= f.submit 'Create Account!' %>
 </div>

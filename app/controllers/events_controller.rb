@@ -62,6 +62,18 @@ class EventsController < ApplicationController
     end
   end
 
+  # GET /search
+  def search
+    @query = params['query']
+    @results = Array.new
+    Event.all.each do |e|
+      if e.title == @query
+        @results.push(e)
+      end
+    end
+    render :results
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_event
@@ -70,6 +82,6 @@ class EventsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def event_params
-      params.require(:event).permit(:title, :org_email, :description, :date, :time, :location, :url, :deadline, :cause_type)
+      params.require(:event).permit(:title, :org_email, :description, :date, :time, :location, :url, :deadline, :cause_type, :query)
     end
 end

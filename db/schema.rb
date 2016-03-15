@@ -30,6 +30,8 @@ ActiveRecord::Schema.define(version: 20160126003212) do
   add_index "events", ["user_id"], name: "index_events_on_user_id"
 
   create_table "users", force: :cascade do |t|
+    t.string   "firstname"
+    t.string   "lastname"
     t.string   "username"
     t.string   "password_hash"
     t.string   "email"
