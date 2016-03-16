@@ -10,7 +10,7 @@
         <center><p style="color: white; width: 200px; font-size: 16pt;">Sign up to post your opportunities today.</p></center>
         <br>
         <center style="">
-<%= form_tag("/newSignup", method: "post") do %>
+<%= form_tag("/signup", method: "post") do %>
   <%= text_field_tag(:first_name, nil, placeholder: "First name") %>
   <br>
   <%= text_field_tag(:last_name, nil, placeholder: "Last name") %>
