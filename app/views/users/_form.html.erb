@@ -31,6 +31,10 @@
     <%= f.label :email %> <br>
     <%= f.email_field :email, :placeholder => "Email" %>
   </div>
+  <div class="field">
+        <%= f.label :username %> <br>
+        <%= f.text_field :username, :value => params[:user], :placeholder => "Username" %>
+  </div>
 </div>
 <div class="col-md-3">
     <h3>Organization Information</h3>
