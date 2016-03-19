@@ -22,8 +22,8 @@
                 <li><%= link_to 'Log Out', '/logout', method: :delete, data: { confirm: 'Are you sure?' } %></li>
     <% end %>
 <% end %>
-                <form id="tfnewsearch" method="get" style="vertical-align: middle">
-                    <input type="text" class="tftextinput" size="21" maxlength="120" style="height: 30%; border: 1px black solid; border-radius: 10px;">
+                <form id="tfnewsearch" action="/search" method="get" style="vertical-align: middle">
+                    <input type="text" name="query" class="tftextinput" size="21" maxlength="120" style="height: 30%; border: 1px black solid; border-radius: 10px;">
                     <button type="submit" class="tfbutton" style="text-align: center; margin-left: -40px; border-top: 1px black solid; border-radius: 10px; border-bottom: 1px black solid; border-right: 1px black solid; border-bottom-left-radius: 0px; border-top-left-radius: 0px;"><i class="fa fa-search"></i></button>
                 </form>
             </ul>
