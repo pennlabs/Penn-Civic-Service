@@ -10,19 +10,44 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :firstname %> <br>
-    <%= f.text_field :firstname, :value => params[:fn], :placeholder => "First name" %>
-  </div>
-  <div class="field">
-    <%= f.label :lastname %> <br>
-    <%= f.text_field :lastname, :value => params[:ln], :placeholder => "Last name" %>
-  </div>
-  <div class="field">
+  <table>
+    <tr>
+      <th> User Information </th>
+      <th> Organization Information </th>
+    </tr>
+    <tr>
+      <div class="field">
+        <%= f.label :firstname %> <br>
+        <%= f.text_field :firstname, :value => params[:fn], :placeholder => "First name" %>
+      </div>
+      <div class="field">
+        <%= f.label :org_name %> <br>
+        <%= f.text_field :org_name, :placeholder => "Organization Name" %>
+      </div> 
+    </tr>
+    <tr>
+      <div class="field">
+        <%= f.label :lastname %> <br>
+        <%= f.text_field :lastname, :value => params[:ln], :placeholder => "Last name" %>
+      </div>
+      <div class="field">
+          <%= f.label :org_url %> <br>
+          <%= f.text_field :org_url, :placeholder => "Url"  %>
+      </div>
+    </tr>
+    <tr>
+<div class="field">
     <%= f.label :username %> <br>
     <%= f.text_field :username, :value => params[:user], :placeholder => "Username" %>
-  </div>
-  <div class="field">
+</div>
+
+    </tr>
+    <tr>
+
+    </tr>
+
+
+    <div class="field">
     <%= f.label :password %> <br>
     <%= f.password_field :password, :value => params[:pass], :placeholder => "Password" %> <br> 
     <%= f.password_field :password_confirm, :placeholder => "Confirm Password" %>
@@ -31,18 +56,7 @@
     <%= f.label :email %> <br>
     <%= f.email_field :email, :placeholder => "Email" %>
   </div>
-  <div class="field">
-    <%= f.label :org_name %> <br>
-    <%= f.text_field :org_name, :placeholder => "Organization Name" %>
-  </div> 
-  <div class="field">
-    <%= f.label :org_url %> <br>
-    <%= f.text_field :org_url, :placeholder => "Url"  %>
-  </div>
-  <div class="field">
-    <%= f.label :org_phone %> <br>
-    <%= f.text_field :org_phone, :placeholder => "Phone"  %>
-  </div>
+    
   <div class="field">
     <%= f.label :org_address %> <br>
     <%= f.text_field :org_address, :placeholder => "Street Address"  %>
@@ -57,16 +71,9 @@
   </div> 
   <div class="field">
     <%= f.label :zipcode %> <br>
-<<<<<<< HEAD
-    <%= f.text_field :zipcode %>
-</div> 
-</tr>
-</table>
-=======
     <%= f.text_field :zipcode, :placeholder => "Zipcode" %>
   </div> 
 
->>>>>>> 639aac069beab99a93a99888ea7dd4498074568c
   <div class="actions">
     <%= f.submit 'Create Account!' %>
 </div>

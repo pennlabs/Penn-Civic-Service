@@ -1,7 +1,8 @@
-Penn Volunteer Bulletin
+# Penn Volunteer Bulletin
+
 A volunteer job board for Penn students by Penn Labs.
 
-# Setting Up
+## Setting Up
 - install RVM (instructions can be found [here.](https://rvm.io/rvm/install))
 - install bundler (`gem install bundler`)
 - install rails (`gem install rails`)
@@ -11,12 +12,12 @@ A volunteer job board for Penn students by Penn Labs.
 - finally, run `rails s`
 - after doing all the setup instructions and running rails s, navigate to localhost:3000
 
-# DB Management
+## DB Management
 - if you ever need to reset your database, just do `rake db:drop`
 - make sure to migrate after each drop/change to the schema
 
-# Config Options
+## Config Options
 - run `rake routes` to see all the current routes
 
-# Contributors
+## Contributors
 - Joseph Gao, Adam Domingoes, the development team at [Penn Labs](http://pennlabs.org/#team)
