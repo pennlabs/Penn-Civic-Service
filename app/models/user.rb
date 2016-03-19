@@ -5,7 +5,8 @@ class User < ActiveRecord::Base
   validates :username, length: { minimum: 2 } 
   validates_uniqueness_of :username
   validates :email, presence: true
-  validates :password_hash, presence: true
+  validates_confirmation_of :password_hash, presence: true
+  validates :password_hash_confirmation, presence: true
   validates :org_name, presence: true
   validates :org_url, presence: true
   validates :org_phone, presence: true

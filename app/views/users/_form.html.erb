@@ -48,10 +48,13 @@
 
 
     <div class="field">
-    <%= f.label :password %> <br>
-    <%= f.password_field :password, :value => params[:pass], :placeholder => "Password" %> <br> 
-    <%= f.password_field :password_confirm, :placeholder => "Confirm Password" %>
-  </div>
+      <%= f.label :password %> <br>
+      <%= f.password_field :password, :value => params[:pass], :placeholder => "Password" %> 
+    </div>
+    <div>
+      <%= f.label :password_confirmation %> <br>
+      <%= f.password_field :password_confirmation, :placeholder => "Confirm Password" %>
+    </div>
   <div class = "field">
     <%= f.label :email %> <br>
     <%= f.email_field :email, :placeholder => "Email" %>
