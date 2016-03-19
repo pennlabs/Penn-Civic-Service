@@ -1,7 +1,6 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-
 input[type="text"] {
     height: 27px;
     margin-bottom: 15px;
@@ -18,11 +17,21 @@ input[type="password"] {
     border-right: solid 4px #191C2F;
     border-bottom: solid 4px #191C2F;
 }
-input[type="submit"] {
+#newSubmit {
     background: #F24901;
     border: 1px solid #F24901;
     color: white;
-    width: 25%;
+    width: 40%;
     border-radius: 20px;
 }
-
+input[type="email"] {
+    height: 27px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+}
+label {
+    color: white;
+}
+h3 {
+    color: white;
+}
