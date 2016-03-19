@@ -29,11 +29,7 @@
     </div>
     <div class="field">
         <%= f.label :password %> <br>
-        <%= f.password_field :password, :value => params[:pass], :placeholder => "Password" %> 
-    </div>
-    <div>
-        <%= f.label :password_confirmation %> <br>
-        <%= f.password_field :password_confirmation, :placeholder => "Confirm Password" %>
+        <%= f.password_field :password, :value => params[:pass], :placeholder => "Password" %>
     </div>
 </div>
 <div class="col-md-3">
@@ -53,15 +49,15 @@
     <div class="field">
         <%= f.label :city %> <br>
         <%= f.text_field :city, :placeholder => "City" %>
-    </div> 
+    </div>
     <div class="field">
         <%= f.label :state %> <br>
         <%= f.text_field :state, :placeholder => "State" %>
-    </div> 
+    </div>
     <div class="field">
         <%= f.label :zipcode %> <br>
         <%= f.text_field :zipcode, :placeholder => "Zipcode" %>
-    </div> 
+    </div>
 </div>
 <div class="actions col-md-6 col-md-offset-5">
     <%= f.submit 'Create Account!' %>
