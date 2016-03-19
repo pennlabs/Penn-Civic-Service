@@ -12,3 +12,17 @@ input[type="password"] {
     margin-bottom: 15px;
     border-radius: 8px;
 }
+#backdrop{
+    background-color: #00916A;
+    border-radius: 9px;
+    border-right: solid 4px #191C2F;
+    border-bottom: solid 4px #191C2F;
+}
+input[type="submit"] {
+    background: #F24901;
+    border: 1px solid #F24901;
+    color: white;
+    width: 25%;
+    border-radius: 20px;
+}
+
