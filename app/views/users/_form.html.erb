@@ -1,80 +1,69 @@
 <%= form_for(@user) do |f| %>
-  <% if @user.errors.any? %>
+    <% if @user.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
-      <ul>
-      <% @user.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
+    <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+    <ul>
+        <% @user.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+    <% end %>
+    </ul>
+</div>
   <% end %>
-
-  <table>
-    <tr>
-      <th> User Information </th>
-      <th> Organization Information </th>
-    </tr>
-    <tr>
-      <div class="field">
+<div class="col-md-3 col-md-offset-3">
+    <h3> User Information </h3>
+    <div class="field">
         <%= f.label :firstname %> <br>
         <%= f.text_field :firstname, :value => params[:fn], :placeholder => "First name" %>
-      </div>
-      <div class="field">
-        <%= f.label :org_name %> <br>
-        <%= f.text_field :org_name, :placeholder => "Organization Name" %>
-      </div> 
-    </tr>
-    <tr>
-      <div class="field">
+    </div>
+    <div class="field">
         <%= f.label :lastname %> <br>
         <%= f.text_field :lastname, :value => params[:ln], :placeholder => "Last name" %>
-      </div>
-      <div class="field">
-          <%= f.label :org_url %> <br>
-          <%= f.text_field :org_url, :placeholder => "Url"  %>
-      </div>
-    </tr>
-    <tr>
-<div class="field">
-    <%= f.label :username %> <br>
-    <%= f.text_field :username, :value => params[:user], :placeholder => "Username" %>
-</div>
-
-    </tr>
-    <tr>
-
-    </tr>
-
+    </div>
+    <div class="field">
+        <%= f.label :username %> <br>
+        <%= f.text_field :username, :value => params[:user], :placeholder => "Username" %>
+    </div>
 
     <div class="field">
-    <%= f.label :password %> <br>
-    <%= f.password_field :password, :value => params[:pass], :placeholder => "Password" %> <br> 
-    <%= f.password_field :password_confirm, :placeholder => "Confirm Password" %>
-  </div>
-  <div class = "field">
-    <%= f.label :email %> <br>
-    <%= f.email_field :email, :placeholder => "Email" %>
-  </div>
-    
-  <div class="field">
-    <%= f.label :org_address %> <br>
-    <%= f.text_field :org_address, :placeholder => "Street Address"  %>
-  </div>
-  <div class="field">
-    <%= f.label :city %> <br>
-    <%= f.text_field :city, :placeholder => "City" %>
-  </div> 
-  <div class="field">
-    <%= f.label :state %> <br>
-    <%= f.text_field :state, :placeholder => "State" %>
-  </div> 
-  <div class="field">
-    <%= f.label :zipcode %> <br>
-    <%= f.text_field :zipcode, :placeholder => "Zipcode" %>
-  </div> 
-
-  <div class="actions">
+        <%= f.label :password %> <br>
+        <%= f.password_field :password, :value => params[:pass], :placeholder => "Password" %> <br> 
+        <p style="line-height: 20px;"><strong>Confirm Password</strong><br><br>
+        <%= f.password_field :password_confirm, :placeholder => "Confirm Password" %>
+        </p>
+    </div>
+    <div class = "field">
+        <%= f.label :email %> <br>
+        <%= f.email_field :email, :placeholder => "Email" %>
+    </div>
+</div>
+<div class="col-md-3">
+    <h3>Organization Information</h3>
+    <div class="field">
+        <%= f.label :org_name %> <br>
+        <%= f.text_field :org_name, :placeholder => "Organization Name" %>
+    </div>
+    <div class="field">
+        <%= f.label :org_url %> <br>
+        <%= f.text_field :org_url, :placeholder => "Url"  %>
+    </div>
+    <div class="field">
+        <%= f.label :org_address %> <br>
+        <%= f.text_field :org_address, :placeholder => "Street Address"  %>
+    </div>
+    <div class="field">
+        <%= f.label :city %> <br>
+        <%= f.text_field :city, :placeholder => "City" %>
+    </div> 
+    <div class="field">
+        <%= f.label :state %> <br>
+        <%= f.text_field :state, :placeholder => "State" %>
+    </div> 
+    <div class="field">
+        <%= f.label :zipcode %> <br>
+        <%= f.text_field :zipcode, :placeholder => "Zipcode" %>
+    </div> 
+</div>
+<div class="actions col-md-6 col-md-offset-5">
     <%= f.submit 'Create Account!' %>
 </div>
 <% end %>
