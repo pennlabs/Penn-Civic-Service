@@ -17,11 +17,24 @@ input[type="checkbox"] {
     width: 16px;
 }
 #backdrop{
+    margin-top: 10px;
     background-color: #FFFFFF;
     border-radius: 9px;
     border-right: solid 4px #191C2F;
     border-bottom: solid 4px #191C2F;
 }
+#backd{
+    margin-top: 20px;
+    background-color: #00916A;
+    border-radius: 9px;
+    border-right: solid 4px #191C2F;
+    border-bottom: solid 4px #191C2F;
+    color: white;
+}
+div#backd label {
+    color: white;
+}
+
 #newSubmit {
     background: #F24901;
     border: 1px solid #F24901;
