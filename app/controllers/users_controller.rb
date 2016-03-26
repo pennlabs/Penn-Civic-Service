@@ -32,6 +32,7 @@ class UsersController < ApplicationController
     if @password != @password_confirm
       respond_to do |format|
         @user.errors.add(:base,"Passwords do not match!")
+        binding.pry
         format.html { redirect_to action: 'new', data: params[:user] }
       end
     else
