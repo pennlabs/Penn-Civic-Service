@@ -17,7 +17,9 @@ input {
     padding: 4px;
 }
 .formStyle {
-    width: 250px;
+    max-width: 350px;
+    min-width: 200px;
+    width: 100%;
     background: #00916A;
     padding: 5px;
     border-radius: 9px;
