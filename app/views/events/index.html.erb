@@ -1,21 +1,70 @@
 <p id="notice"><%= notice %></p>
+<div class="fullHeight row" style="margin-left: 30px;i max-height: 400px; overflow-y: scroll;">
+    <div id="searchPanel" class="fullHieght col-lg-4 col-md-4 col-sm-4 col-xs-0">
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-6"><span class="searchIcons"><%= image_tag('Icons/woman.png', :alt => "rss feed", :class => "icons")%></span>
+        </div>
+            <div class="col-lg-6 col-md-6 col-sm-6">Advocacy & Humanities</div>
+            <div class="col-lg-6 col-md-6 col-sm-6"></div>
+            <div class="col-lg-6 col-md-6 col-sm-6">Animals</div>
+            <div class="col-lg-6 col-md-6 col-sm-6"></div>
+            <div class="col-lg-6 col-md-6 col-sm-6">Arts & Culture</div>
+            <div class="col-lg-6 col-md-6 col-sm-6"></div>
+            <div class="col-lg-6 col-md-6 col-sm-6">Children & Youth</div>
+            <div class="col-lg-6 col-md-6 col-sm-6"></div>
+            <div class="col-lg-6 col-md-6 col-sm-6">Community</div>
+            <div class="col-lg-6 col-md-6 col-sm-6"></div>
+            <div class="col-lg-6 col-md-6 col-sm-6">Computers & Technology</div>
+            <div class="col-lg-6 col-md-6 col-sm-6"></div>
+            <div class="col-lg-6 col-md-6 col-sm-6">Crisis Support</div>
+            <div class="col-lg-6 col-md-6 col-sm-6"></div>
+            <div class="col-lg-6 col-md-6 col-sm-6">Disaster Relief</div>
+            <div class="col-lg-6 col-md-6 col-sm-6"></div>
+            <div class="col-lg-6 col-md-6 col-sm-6">Education & Literacy</div>
+            <div class="col-lg-6 col-md-6 col-sm-6"></div>
+            <div class="col-lg-6 col-md-6 col-sm-6">Emergency & Safety</div>
+            <div class="col-lg-6 col-md-6 col-sm-6"></div>
+            <div class="col-lg-6 col-md-6 col-sm-6">Employment</div>
+            <div class="col-lg-6 col-md-6 col-sm-6"></div>
+            <div class="col-lg-6 col-md-6 col-sm-6">Environment</div>
+            <div class="col-lg-6 col-md-6 col-sm-6"></div>
+            <div class="col-lg-6 col-md-6 col-sm-6">Health & Medicine</div>
+            <div class="col-lg-6 col-md-6 col-sm-6"></div>
+            <div class="col-lg-6 col-md-6 col-sm-6">Homeless & Housing</div>
+            <div class="col-lg-6 col-md-6 col-sm-6"></div>
+            <div class="col-lg-6 col-md-6 col-sm-6">Hunger</div>
+            <div class="col-lg-6 col-md-6 col-sm-6"></div>
+            <div class="col-lg-6 col-md-6 col-sm-6">Immigrants</div>
+            <div class="col-lg-6 col-md-6 col-sm-6"></div>
+            <div class="col-lg-6 col-md-6 col-sm-6">International</div>
+            <div class="col-lg-6 col-md-6 col-sm-6"></div>
+            <div class="col-lg-6 col-md-6 col-sm-6">Justice & Legal</div>
+            <div class="col-lg-6 col-md-6 col-sm-6"></div>
+            <div class="col-lg-6 col-md-6 col-sm-6">LGBT</div>
+            <div class="col-lg-6 col-md-6 col-sm-6"></div>
+            <div class="col-lg-6 col-md-6 col-sm-6">Media & Broadcasting</div>
+            <div class="col-lg-6 col-md-6 col-sm-6"></div>
+            <div class="col-lg-6 col-md-6 col-sm-6">People with Disabilities</div>
+            <div class="col-lg-6 col-md-6 col-sm-6"></div>
+            <div class="col-lg-6 col-md-6 col-sm-6">Politics</div>
+            <div class="col-lg-6 col-md-6 col-sm-6"></div>
+            <div class="col-lg-6 col-md-6 col-sm-6">Race & Ethnicity</div>
+            <div class="col-lg-6 col-md-6 col-sm-6"></div>
+            <div class="col-lg-6 col-md-6 col-sm-6">Sports</div>
+            <div class="col-lg-6 col-md-6 col-sm-6"></div>
+            <div class="col-lg-6 col-md-6 col-sm-6">Veterans</div>
+            <div class="col-lg-6 col-md-6 col-sm-6"></div>
+            <div class="col-lg-6 col-md-6 col-sm-6">Women</div>
 
-<h1>Listing Events</h1>
-<% if @events.empty? %>
-    No events! 
-<% end %> 
 
-<% @events.each do |event| %>
-  <ul>
-    <li> 
-      Title: <%= link_to event.title, event %> <br> 
-      Date: <%= event.date %> <br>
-      Time: <%= event.time %> <br>
-      At: <%= event.location %> <br>
-      Description: <%= event.description %> <br>
-      Deadline: <%= event.deadline %> <br>
-      Website: <a href='http://<%= event.url %>'> <%= event.url %> </a>
-    </li>
-  </ul>
-<% end %>
 
+        </div>
+    </div>
+    <div class="col-lg-7 col-md-7 col-sm-7 col-xs-10 col-lg-offset-1 col-md-offset-1 col-sm-offset-1 col-xs-offset-1">
+        <% if @events.empty? %>
+            No events! 
+    <% else %>
+            <h1>We've found some opportunities for you...</h1>
+    <% end %>   
+    </div>
+</div>

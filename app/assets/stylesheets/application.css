@@ -91,3 +91,14 @@ a:hover {
 div#backd input{
     color: black;
 }
+.fullHeight {
+    margin-left: 20px;
+    height: 100%;
+}
+#searchPanel{
+    background: white;
+}
+.searchIcons {
+    width: 15px;
+    height: 15px;
+}
