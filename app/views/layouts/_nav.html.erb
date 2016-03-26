@@ -1,31 +1,37 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-<nav id="mainnav" class="navbar navbar-default" style="padding: 0px; margin: 0px; text-align: left;">
-    <div>
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-    </div>
-    <div>
-      <ul class="nav navbar-nav">
-        <li><a href="/">Penn Civic Service</a></li>
+<nav  class="navbar navbar-default">
+    <div style="" class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Penn Civic Service</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
 
-<% if logged_in? and current_user.id == session[:user_id]%>
-                <li><a href="/events">Opportunities</a></li>
+                <% if logged_in? and current_user.id == session[:user_id]%>
+                    <li><a href="/events">Opportunities</a></li>
                 <li><a href="/events/new">Create a Post</a></li>
                 <li><%= link_to 'My Profile', current_user %></li>
                 <li><%= link_to 'Log Out', '/logout', method: :delete, data: { confirm: 'Are you sure?' } %></li>
-<% else %>
-    <% if logged_in? %>
-                <li><%= link_to 'My Profile', current_user %></li>
+            <% else %>
+                    <% if logged_in? %>
+                    <li><%= link_to 'My Profile', current_user %></li>
                 <li><%= link_to 'Log Out', '/logout', method: :delete, data: { confirm: 'Are you sure?' } %></li>
-    <% end %>
-<% end %>
-                <form id="tfnewsearch" action="/search" method="get" style="vertical-align: middle">
+            <% end %>
+            <% end %>
+                <li>
+                <form style="padding-top: 9px;" id="tfnewsearch" action="/search" method="get">
                     <input type="text" name="query" class="tftextinput" size="21" maxlength="120" style="height: 30%; border: 1px black solid; border-radius: 10px;">
                     <button type="submit" class="tfbutton" style="text-align: center; margin-left: -40px; border-top: 1px black solid; border-radius: 10px; border-bottom: 1px black solid; border-right: 1px black solid; border-bottom-left-radius: 0px; border-top-left-radius: 0px;"><i class="fa fa-search"></i></button>
                 </form>
-            </ul>
-          </div>
-</nav>
 
+                </li>
+            </ul>
+        </div><!--/.nav-collapse -->
+    </div><!--/.container-fluid -->
+</nav>

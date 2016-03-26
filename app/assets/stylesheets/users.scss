@@ -11,8 +11,13 @@ input[type="password"] {
     margin-bottom: 15px;
     border-radius: 8px;
 }
+input[type="checkbox"] {
+    background: #E9E9E9;
+    height: 16px;
+    width: 16px;
+}
 #backdrop{
-    background-color: #00916A;
+    background-color: #FFFFFF;
     border-radius: 9px;
     border-right: solid 4px #191C2F;
     border-bottom: solid 4px #191C2F;
@@ -30,9 +35,31 @@ input[type="email"] {
     border-radius: 8px;
 }
 label {
-    color: white;
+    color: black;
 }
 h3 {
     color: white;
 }
 
+div#backdrop input {
+    border: solid #5988D8 1px;
+}
+div.desc input {
+    height: 200px;
+    width: 100%;
+}
+div.desc label {
+    text-align: left;
+}
+div.desc input {
+    vertical-align: top;
+    padding-top: 0px;
+    word-wrap: break-word;
+    overflow-y: scroll;
+}
+div#backdrop input[type="text"] {
+    width: 100%;
+}
+div#backdrop input[type="submit"] {
+    min-width: 100px;
+}
