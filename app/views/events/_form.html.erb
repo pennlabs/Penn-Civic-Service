@@ -1,100 +1,105 @@
-<div id="backdrop" class="col-md-8 col-sm-8 col-lg-8 col-sm-offset-2 col-md-offset-2 col-lg-offset-2">
-    <br><br>    
-<%= form_for(@event) do |f| %>
-  <% if @event.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@event.errors.count, "error") %> prohibited this event from being saved:</h2>
-
-      <ul>
-      <% @event.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+<div id="backdrop" class="right col-xs-12 col-md-8 col-sm-8 col-lg-8 col-sm-offset-2 col-md-offset-2 col-lg-offset-2">
+    <br>   
+    <div class="col-xs-8 col-sm-4 col-md-4 col-lg-4" style="color: #F24901">
+        <h2>Tell us what's up.</h2>
+        <br>
     </div>
-  <% end %>
-  <div class="col-md-4 col-sm-4 col-lg-4 col-sm-offset-1 col-md-offset-1 col-lg-offset-1">
-    <%= f.label :title %> 
-    <%= f.text_field :title %>
-</div>
-<div class="clearfix"></div>
-  <div class="col-md-3 col-sm-3 col-lg-3 col-sm-offset-1 col-md-offset-1 col-lg-offset-1">
-    <%= f.label :date %>
-    <%= f.text_field :date %>
-  </div>
-  <div class="col-md-3 col-sm-3 col-lg-3 col-sm-offset-1 col-md-offset-1 col-lg-offset-1">
-    <%= f.label :time %>
-    <%= f.text_field :time %>
-  </div>
-  <div class="col-md-3 col-sm-3 col-lg-3 col-sm-offset-1 col-md-offset-1 col-lg-offset-1">
-    <%= f.label :location %>
-    <%= f.text_field :location %>
-  </div>
-  <div class="col-md-4 col-sm-4 col-lg-4 col-sm-offset-1 col-md-offset-1 col-lg-offset-1">
-    <%= f.label :url %>
-    <%= f.text_field :url %>
-  </div>
-  <div class="col-md-4 col-sm-4 col-lg-4 col-sm-offset-1 col-md-offset-1 col-lg-offset-1">
-    <%= f.label :deadline %>
-    <%= f.text_field :deadline %>
-</div>
-<div class="col-md-4 col-sm-4 col-lg-4 col-sm-offset-1 col-md-offset-1 col-lg-offset-1">
-    <%= f.label :description %>
-    <%= f.text_field :description %>
-  </div>
+    <div class="clearfix"></div>
+    <%= form_for(@event) do |f| %>
+        <% if @event.errors.any? %>
+        <div id="error_explanation">
+        <h2><%= pluralize(@event.errors.count, "error") %> prohibited this event from being saved:</h2>
 
-  <div>
-      <p> What type of cause is this event? </p>
-      <div style="padding-left: 7px; border: 1px black solid; border-radius: 10px; height: 150px; width: 250px; background: #FFFFFF; overflow-y: scroll;">
-    <%= fields_for :cause_type do |c| %>
-      <%= c.check_box :adv_and_hum %>
-      Advocacy &amp; Humanities
-      <br>
-      <%= c.check_box :animals %>
-      Animals
-      <br>
-      <%= c.check_box :art_culture %>
-      Arts &amp; Culture
-      <br>
-      <%= c.check_box :youth %>
-      Children &amp; Youth
-      <br>
-      <%= c.check_box :community %>
-      Community
-       <br>
-      <%= c.check_box :disaster %>
-      Disaster Relief
-      <br>
-      <%= c.check_box :education %>
-      Education &amp; Literacy
-      <br>
-      <%= c.check_box :environment %>
-      Environment
-      <br>
-      <%= c.check_box :heatlh %>
-      Health &amp; Medicine
-      <br>
-      <%= c.check_box :housing %>
-      Homeless &amp; Housing
-      <br>
-      <%= c.check_box :international %>
-      International
-      <br>
-      <%= c.check_box :legal %>
-      Justice &amp; Legal
-      <br>
-      <%= c.check_box :lgbt %>
-      LGBT
-      <br>
-      <%= c.check_box :disabilities %>
-      People with Disabilities
-      <br>
-      <%= c.check_box :sports %>
-      Sports
-  </div>
-   <% end %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+        <ul>
+            <% @event.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+        <% end %>
+        </ul>
+    </div>
+<% end %>
+    <div class="col-md-4 col-sm-4 col-lg-4 col-sm-offset-1 col-xs-offset-2 col-xs-8 col-md-offset-1 col-lg-offset-1">
+        <%= f.label :title %> 
+        <%= f.text_field :title %>
+    </div>
+    <div class="col-md-4 col-sm-4 col-lg-4 col-xs-offset-2 col-xs-8 col-sm-offset-1 col-md-offset-1 col-lg-offset-1">
+        <%= f.label :date %>
+        <%= f.text_field :date %>
+    </div>
+    <div class="col-md-4 col-sm-4 col-lg-4 col-xs-offset-2 col-xs-8 col-sm-offset-1 col-md-offset-1 col-lg-offset-1">
+        <%= f.label :time %>
+        <%= f.text_field :time %>
+    </div>
+    <div class="col-md-4 col-sm-4 col-lg-4 col-xs-offset-2 col-xs-8 col-sm-offset-1 col-md-offset-1 col-lg-offset-1">
+        <%= f.label :location %>
+        <%= f.text_field :location %>
+    </div>
+    <div class="col-xs-8 col-xs-offset-2 col-md-4 col-sm-4 col-lg-4 col-sm-offset-1 col-md-offset-1 col-lg-offset-1">
+        <%= f.label :url %>
+        <%= f.text_field :url %>
+    </div>
+    <div class="col-xs-8 col-xs-offset-2 col-md-4 col-sm-4 col-lg-4 col-sm-offset-1 col-md-offset-1 col-lg-offset-1">
+        <%= f.label :deadline %>
+        <%= f.text_field :deadline %>
+    </div>
+    <div class="desc col-xs-8 col-xs-offset-2 col-md-5 col-sm-5 col-lg-5 col-sm-offset-0 col-md-offset-0 col-lg-offset-0">
+        <%= f.label :description %>
+        <%= f.text_field :description %>
+    </div>
+
+    <div class="right col-xs-8 col-md-4 col-sm-4 col-lg-4 col-xs-offset-2 col-sm-offset-1 col-md-offset-1 col-lg-offset-1">
+        <strong> What type of cause is this event? </strong>
+        <div style="text-align: left; padding-left: 7px; border: 1px #5988D8 solid; border-radius: 10px; height: 150px; width: min(250px, 100%); background: #FFFFFF; overflow-y: scroll;">
+            <%= fields_for :cause_type do |c| %>
+                <%= c.check_box :adv_and_hum %>
+            Advocacy &amp; Humanities
+            <br>
+            <%= c.check_box :animals %>
+            Animals
+            <br>
+            <%= c.check_box :art_culture %>
+            Arts &amp; Culture
+            <br>
+            <%= c.check_box :youth %>
+            Children &amp; Youth
+            <br>
+            <%= c.check_box :community %>
+            Community
+            <br>
+            <%= c.check_box :disaster %>
+            Disaster Relief
+            <br>
+            <%= c.check_box :education %>
+            Education &amp; Literacy
+            <br>
+            <%= c.check_box :environment %>
+            Environment
+            <br>
+            <%= c.check_box :heatlh %>
+            Health &amp; Medicine
+            <br>
+            <%= c.check_box :housing %>
+            Homeless &amp; Housing
+            <br>
+            <%= c.check_box :international %>
+            International
+            <br>
+            <%= c.check_box :legal %>
+            Justice &amp; Legal
+            <br>
+            <%= c.check_box :lgbt %>
+            LGBT
+            <br>
+            <%= c.check_box :disabilities %>
+            People with Disabilities
+            <br>
+            <%= c.check_box :sports %>
+            Sports
+        </div>
+    <% end %>
+    <br>
+</div>
+    <div class="actions col-xs-7 col-sm-7 col-md-7 col-lg-7 col-xs-offset-5 col-sm-offset-5 col-md-offset-5 col-lg-offset-5">
+        <%= f.submit %>
+    </div>
 <% end %>
 </div>
