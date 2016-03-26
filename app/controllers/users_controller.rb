@@ -1,3 +1,4 @@
+require 'pry'
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
@@ -26,14 +27,23 @@ class UsersController < ApplicationController
   # POST /users.json
   def create
     @user = User.new(user_params)
-    @user.password= params[:user][:password]
-    respond_to do |format|
-      if @user.save
-        format.html { redirect_to @user, notice: 'User was successfully created.' }
-        format.json { render :show, status: :created, location: @user }
-      else
-        format.html { render :new }
-        format.json { render json: @user.errors, status: :unprocessable_entity }
+    @password = params[:user][:password]
+    @password_confirm = params[:user][:password_confirmation]
+    if @password != @password_confirm
+      respond_to do |format|
+        @user.errors.add(:base,"Passwords do not match!")
+        format.html { redirect_to action: 'new', data: params[:user] }
+      end
+    else
+      @user.password=@password
+      respond_to do |format|
+        if @user.save
+          format.html { redirect_to @user, notice: 'User was successfully created.' }
+          format.json { render :show, status: :created, location: @user }
+        else
+          format.html { redirect_to action: 'new', data: params[:user] }
+          format.json { render json: @user.errors, status: :unprocessable_entity }
+        end
       end
     end
   end
@@ -70,6 +80,6 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:username, :email, :password, :org_name, :org_url, :org_address, :city, :state, :zipcode, :firstname, :lastname)
+      params.require(:user).permit(:username, :email, :password, :password_confirmation, :org_name, :org_url, :org_address, :city, :state, :zipcode, :firstname, :lastname)
     end
 end
