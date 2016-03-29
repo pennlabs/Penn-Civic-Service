@@ -93,12 +93,20 @@ div#backd input{
 }
 .fullHeight {
     margin-left: 20px;
-    height: 100%;
 }
 #searchPanel{
     background: white;
+    overflow-y: scroll;
+    max-height: 575px;
+    padding-top: 20px;
+    margin-left: 55px;
 }
 .searchIcons {
-    width: 15px;
-    height: 15px;
+    padding-left: 60%;
+}
+.opp_icons {
+    height: 100%;
+    max-height: 35px;
+    width: auto;
+    max-width: 35px;
 }

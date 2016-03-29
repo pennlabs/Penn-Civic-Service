@@ -66,9 +66,11 @@ h3 {
 div#backdrop input {
     border: solid #5988D8 1px;
 }
-div.desc input {
+div.desc textarea {
     height: 200px;
     width: 100%;
+    border-radius: 8px;
+    border: solid #5988D8 1px;
 }
 div.desc label {
     text-align: left;
