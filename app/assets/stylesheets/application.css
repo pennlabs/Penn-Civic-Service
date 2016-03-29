@@ -88,9 +88,20 @@ a:hover {
     text-decoration: none;
     background: rgba(0,0,0,0);
 }
-div#backd input{
+div#backd input[type="text"]{
     color: black;
 }
+div#backd input[type="password"]{
+    color: black;
+}
+div#backd input[type="email"]{
+    color: black;
+}
+div#backd input[type="submit"]{
+    color: white;
+}
+
+
 .fullHeight {
     margin-left: 20px;
 }
@@ -100,6 +111,8 @@ div#backd input{
     max-height: 575px;
     padding-top: 20px;
     margin-left: 55px;
+    border-radius: 8px;
+    border: 1px solid #000;
 }
 .searchIcons {
     padding-left: 60%;
@@ -110,3 +123,4 @@ div#backd input{
     width: auto;
     max-width: 35px;
 }
+
