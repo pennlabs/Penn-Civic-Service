@@ -2,24 +2,28 @@
 <%= form_for(@user) do |f| %>
     <% if @user.errors.any? %>
     <div id="error_explanation">
-    <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
-    <ul>
-        <% @user.errors.full_messages.each do |message| %>
-            <li><%= message %></li>
-        <% end %>
-    </ul>
+      <div class="alert alert-danger">
+        <h2>
+          <%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:
+        </h2>
+      </div>
+      <ul>
+          <% @user.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+          <% end %>
+      </ul>
     </div>
   <% end %>
 <div class="col-md-6">
     <% prev = false %>
-    <% if params['data'] %>
+    <% if params['user'] %>
       <% prev = true %>
     <%end %>
     <h3> User Information </h3>
     <div class="field">
         <%= f.label :firstname %> <br>
         <% if prev %>
-          <%= f.text_field :firstname, :value => params['data']['firstname'], :placeholder => 'First name' %>
+          <%= f.text_field :firstname, :value => params['user']['firstname'], :placeholder => 'First name' %>
         <% else %>
           <%= f.text_field :firstname, :value => params[:fn], :placeholder => "First name" %>
         <% end %>
@@ -27,7 +31,7 @@
     <div class="field">
         <%= f.label :lastname %> <br>
         <% if prev %>
-          <%= f.text_field :lastname, :value => params['data']['lastname'], :placeholder => 'Last name' %>
+          <%= f.text_field :lastname, :value => params['user']['lastname'], :placeholder => 'Last name' %>
         <% else %>
           <%= f.text_field :lastname, :value => params[:ln], :placeholder => "Last name" %>
         <% end %>
@@ -35,7 +39,7 @@
     <div class="field">
         <%= f.label :username %> <br>
         <% if prev %>
-          <%= f.text_field :username, :value => params['data']['username'], :placeholder => 'Username' %>
+          <%= f.text_field :username, :value => params['user']['username'], :placeholder => 'Username' %>
         <% else %>
           <%= f.text_field :username, :value => params[:user], :placeholder => "Username" %>
         <% end %>
@@ -43,7 +47,7 @@
     <div class = "field">
         <%= f.label :email %> <br>
         <% if prev %>
-          <%= f.text_field :email, :value => params['data']['email'], :placeholder => 'Email' %>
+          <%= f.text_field :email, :value => params['user']['email'], :placeholder => 'Email' %>
         <% else %>
          <%= f.email_field :email, :placeholder => "Email" %>
         <% end %>
@@ -63,7 +67,7 @@
     <div class="field">
         <%= f.label :org_name %> <br>
         <% if prev %>
-          <%= f.text_field :org_name, :value => params['data']['org_name'], :placeholder => 'Organization Name' %>
+          <%= f.text_field :org_name, :value => params['user']['org_name'], :placeholder => 'Organization Name' %>
         <% else %>
           <%= f.text_field :org_name, :placeholder => "Organization Name" %>
         <% end %>
@@ -71,7 +75,7 @@
     <div class="field">
         <%= f.label :org_url %> <br>
         <% if prev %>
-          <%= f.text_field :org_url, :value => params['data']['org_url'], :placeholder => 'Organization URL' %>
+          <%= f.text_field :org_url, :value => params['user']['org_url'], :placeholder => 'Organization URL' %>
         <% else %>
           <%= f.text_field :org_url, :placeholder => "Organization URL" %>
         <% end %>
@@ -79,7 +83,7 @@
     <div class="field">
         <%= f.label :org_address %> <br>
         <% if prev %>
-          <%= f.text_field :org_address, :value => params['data']['org_address'], :placeholder => 'Organization Address' %>
+          <%= f.text_field :org_address, :value => params['user']['org_address'], :placeholder => 'Organization Address' %>
         <% else %>
           <%= f.text_field :org_address, :placeholder => "Organization Address" %>
         <% end %>
@@ -87,7 +91,7 @@
     <div class="field">
         <%= f.label :city %> <br>
         <% if prev %>
-          <%= f.text_field :city, :value => params['data']['city'], :placeholder => 'City' %>
+          <%= f.text_field :city, :value => params['user']['city'], :placeholder => 'City' %>
         <% else %>
           <%= f.text_field :city, :placeholder => "City" %>
         <% end %>
@@ -95,7 +99,7 @@
     <div class="field">
         <%= f.label :state %> <br>
         <% if prev %>
-          <%= f.text_field :state, :value => params['data']['state'], :placeholder => 'State' %>
+          <%= f.text_field :state, :value => params['user']['state'], :placeholder => 'State' %>
         <% else %>
           <%= f.text_field :state, :placeholder => "State" %>
         <% end %>
@@ -103,7 +107,7 @@
     <div class="field">
         <%= f.label :zipcode %> <br>
         <% if prev %>
-          <%= f.text_field :zipcode, :value => params['data']['zipcode'], :placeholder => 'Zipcode' %>
+          <%= f.text_field :zipcode, :value => params['user']['zipcode'], :placeholder => 'Zipcode' %>
         <% else %>
           <%= f.text_field :zipcode, :placeholder => "Zipcode" %>
         <% end %>
