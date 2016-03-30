@@ -61,12 +61,12 @@
             <%= f.text_field :zipcode, :placeholder => current_user.zipcode %>
         </div>
     </div>
-    <div class="actions col-md-6 col-md-offset-6">
+    <div class="actions col-lg-6 col-md-6 col-sm-6 col-xs-6">
         <%= f.submit 'Save Updates', :id => "newSubmit"%>
     </div>
 <% end %>
 </div>
-<div style="" class="col-sm-offset-1 col-md-offset-1 col-lg-offset-1 col-sm-3 col-md-3 col-lg-3 col-xs-12 col-xs-offset-0" id="backdrop">
+<div style="" class="col-sm-offset-1 col-md-offset-1 col-lg-offset-1 col-sm-3 col-md-3 col-lg-3 col-xs-12 col-xs-offset-0" id="backdropEvents">
     <%= render 'users/form3' %>
 </div>
 <% else %>
