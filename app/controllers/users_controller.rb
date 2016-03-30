@@ -27,25 +27,17 @@ class UsersController < ApplicationController
   # POST /users.json
   def create
     @user = User.new(user_params)
-    @password = params[:user][:password]
-    @password_confirm = params[:user][:password_confirmation]
-    if @password != @password_confirm
-      respond_to do |format|
-        @user.errors.add(:base,"Passwords do not match!")
-        format.html { redirect_to action: 'new', data: params[:user] }
-      end
-    else
-      @user.password=@password
-      respond_to do |format|
-        if @user.save
-          format.html { redirect_to @user, notice: 'User was successfully created.' }
-          format.json { render :show, status: :created, location: @user }
-        else
-          format.html { redirect_to action: 'new', data: params[:user] }
-          format.json { render json: @user.errors, status: :unprocessable_entity }
-        end
+    respond_to do |format|
+      if @user.save
+        format.html { redirect_to @user, notice: 'User was successfully created.' }
+        format.json { render :show, status: :created, location: @user }
+      else
+        format.html { render :new }
+        #format.html { redirect_to :action => 'new', data: params[:user] }
+        format.json { render json: @user.errors, status: :unprocessable_entity }
       end
     end
+    #end
   end
 
   # PATCH/PUT /users/1
