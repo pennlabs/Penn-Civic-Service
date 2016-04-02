@@ -20,17 +20,17 @@
         </ul>
     </div>
 <% end %>
-    <div class="col-md-4 col-sm-4 col-lg-4 col-sm-offset-1 col-xs-offset-2 col-xs-8 col-md-offset-1 col-lg-offset-1">
+    <div class="col-md-9 col-sm-9 col-lg-9 col-sm-offset-1 col-xs-offset-2 col-xs-8 col-md-offset-1 col-lg-offset-1">
         <%= f.label :title %> 
         <%= f.text_field :title %>
     </div>
     <div class="col-md-4 col-sm-4 col-lg-4 col-xs-offset-2 col-xs-8 col-sm-offset-1 col-md-offset-1 col-lg-offset-1">
         <%= f.label :date %>
-        <%= f.text_field :date %>
+        <%= f.date_field :date %>
     </div>
     <div class="col-md-4 col-sm-4 col-lg-4 col-xs-offset-2 col-xs-8 col-sm-offset-1 col-md-offset-1 col-lg-offset-1">
         <%= f.label :time %>
-        <%= f.text_field :time %>
+        <%= f.time_field :time %>
     </div>
     <div class="col-md-4 col-sm-4 col-lg-4 col-xs-offset-2 col-xs-8 col-sm-offset-1 col-md-offset-1 col-lg-offset-1">
         <%= f.label :location %>
@@ -44,6 +44,7 @@
         <%= f.label :deadline %>
         <%= f.text_field :deadline %>
     </div>
+    <div class="clearfix"></div>
     <div class="desc col-xs-8 col-xs-offset-2 col-md-5 col-sm-5 col-lg-5 col-sm-offset-0 col-md-offset-0 col-lg-offset-0">
         <%= f.label :description %>
         <%= f.text_area :description %>
