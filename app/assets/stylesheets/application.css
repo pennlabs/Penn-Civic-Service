@@ -35,6 +35,9 @@ html {
     top: 50%;
     transform: translateY(-50%);
 }
+.center-text {
+    text-align: center;
+}
 .paddSpan {
     padding-right: 4.6%;
     padding-left: 4.6%;
@@ -123,4 +126,13 @@ div#backd input[type="submit"]{
     width: auto;
     max-width: 35px;
 }
+.white {
+    color: white;
+}
+.contact_form {
+    background: #FFF;
+    border-top: white solid 2px;
+    border-bottom: white solid 2px;
+    color: #696969;
 
+}
