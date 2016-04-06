@@ -1,3 +1,24 @@
 // Place all the styles related to the sessions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+#error_explanation {
+  width: 450px;
+  padding: 7px;
+  padding-bottom: 0;
+  margin-bottom: 20px;
+
+  h2 {
+    text-align: left;
+    font-weight: bold;
+    padding: 5px 5px 5px 15px;
+    font-size: 12px;
+    margin: -7px;
+    margin-bottom: 0px;
+    color: #8b0000;
+  }
+
+  ul li {
+    font-size: 12px;
+    list-style: square;
+  }
+}

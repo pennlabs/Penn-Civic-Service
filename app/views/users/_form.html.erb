@@ -41,7 +41,7 @@
         <% if prev %>
           <%= f.text_field :username, :value => params['user']['username'], :placeholder => 'Username' %>
         <% else %>
-          <%= f.text_field :username, :value => params[:user], :placeholder => "Username" %>
+          <%= f.text_field :username, :value => params[:username], :placeholder => "Username" %>
         <% end %>
     </div>
     <div class = "field">
