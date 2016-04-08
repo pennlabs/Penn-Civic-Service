@@ -1,20 +1,30 @@
 <% @events.each do |event| %>
-    <div class="card">
-    <div class="cardTitle"><strong><%= link_to event.title, event %></strong></div>
-    <div class="cardRest col-sm-12 col-xs-12 col-md-12 col-lg-12">
-        <div class="cardElem col-xs-7 col-sm-7 col-md-7 col-lg-7" style="padding: 0px">Date: <%= event.date %></div>
-        <div class="cardElem col-xs-5 col-sm-5 col-md-5 col-lg-5" style="padding: 0px;">Time: <%= event.time %></div>
-        <div class="clearfix"></div>
-        <div class="cardElem col-xs-6 col-sm-6 col-md-6 col-lg-6" style="padding-left: 0px; padding-top: 5px">Description: <p><%= event.description %></p></div>
-        <div style="padding: 0px" class="cardCal col-md-5 col-sm-5 col-xs-5 col-lg-5">
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 cardCalMonth">
-                Month
+    <div class="bigCard">
+        <div class="bigCardTitle col-xs-9 col-sm-9 col-md-9 col-lg-9"><strong><%= link_to event.title, event %></strong> with <strong><span class="orgName"><%= "Company" %></span></strong> </div>
+        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+            <span class="tinyText"> SIGN UP BY: </span>
+            <div class="deadlineBox">
+                <%= event.deadline %>
             </div>
-            00
         </div>
-
+        <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10">
+            <%= event.description %>
+        </div>
+    <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+        <%= image_tag( "Icons/calendar.png", :alt => "rss feed", :class => "calendar speedyAnimation", :animation => "bounceIn",)%>
+        <span class="calNum"><%= event.date[8..9] %></span>
+        <span class="calMonth"><%= to_month(event.date[5..6])[0..2] %></span>
     </div>
-
+    <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4">
+        <span><%= image_tag( "Icons/locationicon.png", :alt => "rss feed", :class => "calendar speedyAnimation locationPin", :animation => "bounceIn",)%></span>
+    <%= event.location%>
+    </div>
+    <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4 rightAlign">
+        <%= get_pictures(((event.cause_type.select {|k, v| v.match("1")}).keys)[0..2]).each do |p| %>
+            <%= image_tag( "Icons/" + p, :alt => "rss feed", :class => "tinyIcons speedyAnimation", :animation => "bounceIn") %>
+            <% if (p).eql?(get_pictures(((event.cause_type.select {|k, v| v.match("1")}).keys)[0..2]).last) then break end %>
+        <% end %>
+    </div>
 </div>
-<br>
+    <br>
 <% end %>

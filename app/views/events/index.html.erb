@@ -1,22 +1,25 @@
 <p id="notice"><%= notice %></p>
 <div class="row" style="width: 100%;">
     <div id="searchPanel" class="fullHieght col-lg-3 col-md-3 col-sm-3 hidden-xs">
+        <div class="toTop"><h2>Filter by cause...</h2></div>
         <% cause().each do |title, pic|%>
+            <a href=<%= "/search?query=" + pic.gsub(".png","")%> class="black">
             <div class="row">
                 <div class="col-lg-3 col-md-3 col-sm-3">
                     <span class="searchIcons"><%= image_tag( "Icons/"+pic, :alt => "rss feed", :class => "opp_icons speedyAnimation", :animation => "bounceIn")%></span>
                 </div>
-            <div class="col-lg-9 col-md-9 col-sm-9"><%= title %></div>
-            <br>
-            <br>
-        </div>
+                <div class="col-lg-9 col-md-9 col-sm-9"><%= title %></div>
+                <br>
+                <br>
+            </div>
+        </a>
     <% end %>
     </div>
     <div class="col-lg-7 col-md-7 col-sm-7 col-xs-10 col-lg-offset-1 col-md-offset-1 col-sm-offset-1 col-xs-offset-1">
         <% if @events.empty? %>
             <div class="row center-text"><h1>We weren't able to find anything at this time. Please check back later.</h1></div> 
     <% else %>
-        <h1>We've found some opportunities for you...</h1>
+            <h1>We've found some opportunities for you...</h1>
         <%= render 'events/bigCard' %>
     <% end %>   
     </div>

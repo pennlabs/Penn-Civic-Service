@@ -29,4 +29,11 @@ module EventsHelper
         causes.push(["Women", "woman.png"])
     end
 
+    def get_pictures(arr) 
+        a = []
+        arr.each { |x| 
+            b = x.gsub("-", " ")
+            a.push((b + ".png")) }
+        a
+    end
 end
