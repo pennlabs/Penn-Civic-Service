@@ -90,7 +90,7 @@ class EventsController < ApplicationController
 
     def search
         @query = params['query']
-        @results = Array.new
+        @events = Array.new
         @dist = Array.new
         Event.all.each do |e|
                 @dist.push([ ([distance(e.title.downcase, @query.downcase), distance(e.user.org_name.downcase, @query.downcase)].min)/(1.0 * [e.title.length, e.user.org_name.length].max) , e])
@@ -98,7 +98,7 @@ class EventsController < ApplicationController
         @dist.sort_by! {|i| i.first}
         @dist.each do |i|
             if i.first < 1
-                @results.push(i[1])
+                @events.push(i[1])
             end
         end
         render :results
