@@ -19,6 +19,7 @@ class EventsController < ApplicationController
 
     # GET /events/1/edit
     def edit
+      @details = Event.find(params['id'])
     end
 
     # POST /events
@@ -41,6 +42,7 @@ class EventsController < ApplicationController
     # PATCH/PUT /events/1
     # PATCH/PUT /events/1.json
     def update
+        @event.cause_type = params[:cause_type]
         respond_to do |format|
             if @event.update(event_params)
                 format.html { redirect_to @event, notice: 'Event was successfully updated.' }

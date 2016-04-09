@@ -2,7 +2,7 @@
     <h1> Please log in! </h1>
 <% else %>
     <div id="backdrop" class="right col-xs-12 col-md-8 col-sm-8 col-lg-8 col-sm-offset-2 col-md-offset-2 col-lg-offset-2">
-    <br>   
+    <br>
     <div class="col-xs-8 col-sm-4 col-md-4 col-lg-4" style="color: #F24901">
         <h2>Need to make some changes?</h2>
         <br>
@@ -21,16 +21,16 @@
     </div>
 <% end %>
     <div class="col-md-9 col-sm-9 col-lg-9 col-sm-offset-1 col-xs-offset-2 col-xs-8 col-md-offset-1 col-lg-offset-1">
-        <%= f.label :title %> 
+        <%= f.label :title %>
         <%= f.text_field :title, :maxlength => 45%>
     </div>
     <div class="col-md-4 col-sm-4 col-lg-4 col-xs-offset-2 col-xs-8 col-sm-offset-1 col-md-offset-1 col-lg-offset-1">
         <%= f.label :date %>
-        <%= f.date_field :date, min: Date.today%>
+        <%= f.date_field :date, value: @event.date %>
     </div>
     <div class="col-md-4 col-sm-4 col-lg-4 col-xs-offset-2 col-xs-8 col-sm-offset-1 col-md-offset-1 col-lg-offset-1">
         <%= f.label :time %>
-        <%= f.time_field :time %>
+        <%= f.time_field :time, value: @event.time %>
     </div>
     <div class="col-md-4 col-sm-4 col-lg-4 col-xs-offset-2 col-xs-8 col-sm-offset-1 col-md-offset-1 col-lg-offset-1">
         <%= f.label :location %>
@@ -42,7 +42,7 @@
     </div>
     <div class="col-xs-8 col-xs-offset-2 col-md-4 col-sm-4 col-lg-4 col-sm-offset-1 col-md-offset-1 col-lg-offset-1">
         <%= f.label :deadline %>
-        <%= f.date_field :deadline, min: Date.today%>
+        <%= f.date_field :deadline, value: @event.deadline %>
     </div>
     <div class="clearfix"></div>
     <div class="desc col-xs-8 col-xs-offset-2 col-md-5 col-sm-5 col-lg-5 col-sm-offset-0 col-md-offset-0 col-lg-offset-0">
@@ -55,10 +55,15 @@
         <div style="text-align: left; padding-left: 7px; border: 1px #5988D8 solid; border-radius: 10px; height: 150px; width: min(250px, 100%); background: #FFFFFF; overflow-y: scroll;">
             <%= fields_for :cause_type do |c| %>
                 <%= cause.each do |title, pic|%>
-                    <%= c.check_box (pic.sub! '.png', '').parameterize.to_sym  %>
-                    <%= title %>
-                    <br>
-                    <% if (title).eql?(cause.last.first) then break end%>
+                  <% name = pic.sub('.png', '').sub(' ', '-') %>
+                  <% if @details and @details.cause_type[name] == "1" %>
+                    <%= c.check_box (pic.sub! '.png', '').parameterize.to_sym, {checked: true} %>
+                  <% else %>
+                    <%= c.check_box (pic.sub! '.png', '').parameterize.to_sym %>
+                  <% end %>
+                  <%= title %>
+                  <br>
+                  <% if (title).eql?(cause.last.first) then break end%>
                 <% end%>
         </div>
     <% end %>
