@@ -36,4 +36,12 @@ module EventsHelper
             a.push((b + ".png")) }
         a
     end
+
+    def get_cause_from_pic(p)
+        b = ""
+        a = cause()
+        a.each { |x|
+                b = x[0] if x[1] == p}
+        b
+    end
 end
