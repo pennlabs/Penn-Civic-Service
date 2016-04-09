@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   root 'welcome#index'
   resources :events
   resources :users, :except => [:index]
-  get '/about' => 'welcome#about'
+  get '/faq' => 'welcome#about'
   
   # account creation
 #  get '/signup' => 'users#new'
