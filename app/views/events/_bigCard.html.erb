@@ -22,7 +22,7 @@
     </div>
     <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4 rightAlign">
         <%= get_pictures(((event.cause_type.select {|k, v| v.match("1")}).keys)[0..2]).each do |p| %>
-            <%= image_tag( "Icons/" + p, :alt => "rss feed", :class => "tinyIcons speedyAnimation", :animation => "bounceIn") %>
+            <%= image_tag( "Icons/" + p, :alt => "rss feed", :class => "tinyIcons speedyAnimation", :animation => "bounceIn", :title => get_cause_from_pic(p)) %>
             <% if (p).eql?(get_pictures(((event.cause_type.select {|k, v| v.match("1")}).keys)[0..2]).last) then break end %>
         <% end %>
     </div>
