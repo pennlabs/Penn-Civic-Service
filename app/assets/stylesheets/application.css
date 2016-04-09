@@ -235,3 +235,14 @@ div.bigCardTitle a{
     color: #006600;
     font-size: 37pt;
 }
+.red {
+    color: red;
+}
+.nowrap {
+    padding-left: 20px;
+    text-align: left;
+}
+.green {
+    color: #00cc00;
+    padding-left: 20px;
+}

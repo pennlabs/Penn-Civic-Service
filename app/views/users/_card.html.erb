@@ -17,6 +17,12 @@
     </div>
 
 </div>
+<div class="clearfix"></div>
+<div class="row nowrap">
+    <div><a href=<%="/"%>> <i class="red fa fa-times"></i> Delete</a>
+        <a href=<%= "/events/" + e.id.to_s + "/edit/"%>> <i class="green fa fa-pencil-square-o"></i>  Edit</a></div>  
+</div>
+<br>
 <br>
 <% if (e).eql?(current_user.events.last) then break end%>
 <% end %>
