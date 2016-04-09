@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   root 'welcome#index'
   resources :events
-  resources :users
+  resources :users, :except => [:index]
   get '/about' => 'welcome#about'
   
   # account creation

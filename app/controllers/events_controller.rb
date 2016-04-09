@@ -29,7 +29,7 @@ class EventsController < ApplicationController
         current_user.events.append(@event)
         respond_to do |format|
             if @event.save
-                format.html { redirect_to @event, notice: 'Event was successfully created.' }
+                format.html { redirect_to '/events' }
                 format.json { render :show, status: :created, location: @event }
             else
                 format.html { render :new }
@@ -85,7 +85,7 @@ class EventsController < ApplicationController
         end
         d[m][n]
     end
-    
+
     def search
         @query = params['query']
         @results = Array.new
@@ -95,7 +95,7 @@ class EventsController < ApplicationController
         end
         @dist.sort_by! {|i| i.first}
         @dist.each do |i|
-            if i.first < 1 
+            if i.first < 1
                 @results.push(i[1])
             end
         end
