@@ -1,6 +1,6 @@
 <% @events.each do |event| %>
     <div class="bigCard">
-        <div class="bigCardTitle col-xs-9 col-sm-9 col-md-9 col-lg-9"><strong><%= link_to event.title, event %></strong> with <strong><span class="orgName"><%= "Company" %></span></strong> </div>
+        <div class="bigCardTitle col-xs-9 col-sm-9 col-md-9 col-lg-9"><strong><%= link_to event.title, event %></strong> with <strong><span class="orgName"><%= event.user.org_name %></span></strong> </div>
         <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
             <span class="tinyText"> SIGN UP BY: </span>
             <div class="deadlineBox">
@@ -8,15 +8,16 @@
             </div>
         </div>
         <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10">
-            <%= event.description %>
+            <%= event.description[0..150] %><br>
         </div>
+
     <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
         <%= image_tag( "Icons/calendar.png", :alt => "rss feed", :class => "calendar speedyAnimation", :animation => "bounceIn",)%>
         <span class="calNum"><%= event.date[8..9] %></span>
         <span class="calMonth"><%= to_month(event.date[5..6])[0..2] %></span>
     </div>
     <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4">
-        <span><%= image_tag( "Icons/locationicon.png", :alt => "rss feed", :class => "calendar speedyAnimation locationPin", :animation => "bounceIn",)%></span>
+        <span><%= image_tag( "Icons/locationicon.png", :alt => "rss feed", :class => "tinyIcons calendar speedyAnimation locationPin", :animation => "bounceIn",)%></span>
     <%= event.location%>
     </div>
     <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4 rightAlign">
