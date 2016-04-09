@@ -24,7 +24,7 @@
 }
 #body{
     height: 100%;
-    background-color: #D1D1D0;
+    background-color: #e6e6e6;
 }
 html {
     height: 100%;
@@ -245,4 +245,23 @@ div.bigCardTitle a{
 .green {
     color: #00cc00;
     padding-left: 20px;
+}
+.whiteBox {
+    background: #FFF;
+    border-radius: 8px;
+    border: 1px solid black;
+    padding: 15px;
+}
+.greenQuestion {
+    color: #00cc99;
+}
+.faqLinks {
+    color: #339933;
+    font-size: 16pt;
+}
+.filler {
+    height: 30%;
+}
+.leftAlign {
+    text-align: left;
 }
