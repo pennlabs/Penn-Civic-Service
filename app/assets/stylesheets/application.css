@@ -247,16 +247,31 @@ div.bigCardTitle a{
     padding-left: 20px;
 }
 .whiteBox {
-    background: #FFF;
-    border-radius: 8px;
+    background: #339966;
+    border-radius: 6px;
     border: 1px solid black;
-    padding: 15px;
+    border-bottom: 4px solid black;
+    border-right: 4px solid black;
+    padding: 5px;
+    margin-bottom: 15px;
 }
 .greenQuestion {
-    color: #00cc99;
+    color: #FFFFFF;
+}
+.faqli {
+    margin-bottom: 8px;
+    color: #FFFFFF;
 }
 .faqLinks {
-    color: #339933;
+    font-size: 16pt;
+    color: #FFFFFF;
+}
+.faqLinks:visited {
+    color: #FFFFFF;
+    font-size: 16pt;
+}
+.faqLinks:link {
+    color: #FFFFFF;
     font-size: 16pt;
 }
 .filler {
@@ -264,4 +279,8 @@ div.bigCardTitle a{
 }
 .leftAlign {
     text-align: left;
+}
+.faqText {
+    font-size: 14pt;
+
 }

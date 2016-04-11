@@ -1,18 +1,22 @@
 <center><h1>Frequently Asked Questions</h1></center>
 <div class="whiteBox col-xs-10 col-sm-8 col-md-8 col-lg-8 col-xs-offset-1 col-sm-offset-2 col-md-offset-2 col-lg-offset-2">
+    <br>
     <ul>
         <% faqs().each do |n, q, a| %>
-            <li><a class="faqLinks" href=<%="#" + n.to_s %>><%= q %></a></li>
-        <% end %>
+            <li class="faqli"><a class="faqLinks" href=<%="#" + n.to_s %>><%= q %></a></li>
+    <% end %>
     </ul>
 </div>
 <div class="filler">
 </div>
+<% faqs().each do |num, question, answer| %>
+    <a name= <%= num.to_s %>></a>
+
 <div class="whiteBox col-xs-10 col-sm-8 col-md-8 col-lg-8 col-xs-offset-1 col-sm-offset-2 col-md-offset-2 col-lg-offset-2">
-    <% faqs().each do |num, question, answer| %>
-        <a name= <%= num.to_s %>></a>
     <h1 class="greenQuestion"><%= question%></h1>
-    <p><%= answer %></p>
-    <br>
-<% end %>
+
 </div>
+<div class="clearFix"></div>
+<div class="faqText col-xs-10 col-sm-8 col-md-8 col-lg-8 col-xs-offset-1 col-sm-offset-2 col-md-offset-2 col-lg-offset-2"></p><%= answer %></p><br></div>
+<br>
+<% end %>
