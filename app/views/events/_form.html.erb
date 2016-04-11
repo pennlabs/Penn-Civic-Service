@@ -26,7 +26,7 @@
     </div>
     <div class="col-md-4 col-sm-4 col-lg-4 col-xs-offset-2 col-xs-8 col-sm-offset-1 col-md-offset-1 col-lg-offset-1">
         <%= f.label :date %>
-        <%= f.date_field :date, min: Date.today%>
+        <%= f.date_field :date, min: Date.today, max: "2099-12-31"%>
     </div>
     <div class="col-md-4 col-sm-4 col-lg-4 col-xs-offset-2 col-xs-8 col-sm-offset-1 col-md-offset-1 col-lg-offset-1">
         <%= f.label :time %>
@@ -38,11 +38,21 @@
     </div>
     <div class="col-xs-8 col-xs-offset-2 col-md-4 col-sm-4 col-lg-4 col-sm-offset-1 col-md-offset-1 col-lg-offset-1">
         <%= f.label :url %>
-        <%= f.text_field :url %>
+        <%= f.text_field :url , :id => "urlInput", :placeholder => "http://"%>
+        <script>
+$(document).ready(function(){
+        $("#urlInput").focus(function(){
+            $(this).val("http://");
+            });
+        $("#urlInput").keyup(function(){
+            if ($(this).val().length < 7) $(this).val("http://");
+            });
+        });
+        </script>
     </div>
     <div class="col-xs-8 col-xs-offset-2 col-md-4 col-sm-4 col-lg-4 col-sm-offset-1 col-md-offset-1 col-lg-offset-1">
         <%= f.label :deadline %>
-        <%= f.date_field :deadline, min: Date.today%>
+        <%= f.date_field :deadline, min: Date.today, max: "2099-12-31"%>
     </div>
     <div class="clearfix"></div>
     <div class="desc col-xs-8 col-xs-offset-2 col-md-5 col-sm-5 col-lg-5 col-sm-offset-0 col-md-offset-0 col-lg-offset-0">
@@ -55,11 +65,11 @@
         <div style="text-align: left; padding-left: 7px; border: 1px #5988D8 solid; border-radius: 10px; height: 150px; width: min(250px, 100%); background: #FFFFFF; overflow-y: scroll;">
             <%= fields_for :cause_type do |c| %>
                 <%= cause.each do |title, pic|%>
-                    <%= c.check_box (pic.sub! '.png', '').parameterize.to_sym  %>
-                    <%= title %>
-                    <br>
-                    <% if (title).eql?(cause.last.first) then break end%>
-                <% end%>
+                <%= c.check_box (pic.sub! '.png', '').parameterize.to_sym  %>
+            <%= title %>
+            <br>
+            <% if (title).eql?(cause.last.first) then break end%>
+            <% end%>
         </div>
     <% end %>
         <br>
