@@ -1,22 +1,20 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 <nav  class="navbar navbar-default" style="background: #FFF; margin-bottom: 10px;">
     <div style="" class="container-fluid">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-        </div>
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <div class="navbar-header"><a class="navbar-brand" href="/"><%= image_tag("Icons/pennvolvementlogo.png", :alt => "rss feed", :class => "navIcon")%></a></div>
         <div id="navbar" class="navbar-collapse collapse">
-            <ul class="nav navbar-nav" style="width: 90%">
-                
+            <ul class="nav navbar-nav" style="width: 80%">
+
                 <% if logged_in? and current_user.id == session[:user_id]%>
-                    <li><a class="navbar-brand" href="/"><%= image_tag("Icons/pennvolvementlogo.png", :alt => "rss feed", :class => "navIcon")%></a></li>
                     <li><a href="/events">Opportunities</a></li>
-                    <li><a href="/events/new">Create a Post</a></li>
-                    <li><a href="/faq">FAQ</a></li>
+                <li><a href="/events/new">Create a Post</a></li>
+                <li><a href="/faq">FAQ</a></li>
                 <li><%= link_to 'My Profile', current_user %></li>
                 <li><%= link_to 'Log Out', '/logout', method: :delete, data: { confirm: 'Are you sure?' } %></li>
             <% else %>
@@ -24,11 +22,11 @@
                     <li><%= link_to 'My Profile', current_user %></li>
                 <li><%= link_to 'Log Out', '/logout', method: :delete, data: { confirm: 'Are you sure?' } %></li>
             <% else %>
-                <li><a href="/events">Opportunities</a></li>
+                    <li><a href="/events">Opportunities</a></li>
                 <li><a href="/faq">FAQ</a></li>
             <% end %>
             <% end %>
-            <li style="float: right">
+                <li style="float: right">
                 <form style="padding-top: 9px;" id="tfnewsearch" action="/search" method="get">
                     <input type="text" name="query" class="tftextinput" size="21" maxlength="120" style="height: 30%; border: 1px rgb(221,221,221) solid; border-radius: 10px;">
                     <button type="submit" class="tfbutton" style="text-align: center; margin-left: -40px; border-top: 1px rgb(221,221,221) solid; border-radius: 10px; border-bottom: 1px rgb(221,221,221) solid; border-right: 1px rgb(221,221,221) solid; border-bottom-left-radius: 0px; border-top-left-radius: 0px;"><i class="fa fa-search"></i></button>
@@ -36,6 +34,6 @@
 
                 </li>
             </ul>
-        </div><!--/.nav-collapse -->
-    </div><!--/.container-fluid -->
+        </div>
+    </div>
 </nav>
