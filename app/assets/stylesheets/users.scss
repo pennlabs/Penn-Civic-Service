@@ -82,8 +82,9 @@ div.desc input {
     word-wrap: break-word;
     overflow-y: scroll;
 }
-div#backdrop input[type="text"] {
+div#backdrop input[type="text"], div#backdrop input[type="url"] {
     width: 100%;
+    margin-bottom: 10px;
 }
 div#backdrop input[type="date"], div#backdrop input[type="time"] {
     width: 100%;
