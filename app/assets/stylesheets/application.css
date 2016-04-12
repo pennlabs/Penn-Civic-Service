@@ -274,13 +274,17 @@ div.bigCardTitle a{
     padding-left: 20px;
 }
 .whiteBox {
-    background: #339966;
+    background: #FFFFFF;
     border-radius: 6px;
-    border: 1px solid black;
-    border-bottom: 4px solid black;
-    border-right: 4px solid black;
+    border: 1px rgb(221,221,221) black;
+    border-bottom: 4px solid rgb(221,221,221);
+    border-right: 4px solid rgb(221,221,221);
     padding: 5px;
     margin-bottom: 15px;
+}
+.cursorToHand{
+    cursor: pointer;
+    color: #F24901;
 }
 .greenQuestion {
     color: #FFFFFF;

@@ -38,17 +38,7 @@
     </div>
     <div class="col-xs-8 col-xs-offset-2 col-md-4 col-sm-4 col-lg-4 col-sm-offset-1 col-md-offset-1 col-lg-offset-1">
         <%= f.label :url %>
-        <%= f.text_field :url , :id => "urlInput", :placeholder => "http://"%>
-        <script>
-$(document).ready(function(){
-        $("#urlInput").focus(function(){
-            $(this).val("http://");
-            });
-        $("#urlInput").keyup(function(){
-            if ($(this).val().length < 7) $(this).val("http://");
-            });
-        });
-        </script>
+        <%= f.url_field :url , :id => "urlInput", :placeholder => "http://"%>
     </div>
     <div class="col-xs-8 col-xs-offset-2 col-md-4 col-sm-4 col-lg-4 col-sm-offset-1 col-md-offset-1 col-lg-offset-1">
         <%= f.label :deadline %>

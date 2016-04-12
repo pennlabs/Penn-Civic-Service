@@ -1,22 +1,10 @@
 <center><h1>Frequently Asked Questions</h1></center>
 <div class="whiteBox col-xs-10 col-sm-8 col-md-8 col-lg-8 col-xs-offset-1 col-sm-offset-2 col-md-offset-2 col-lg-offset-2">
+    <% faqs().each do |n, q, a| %>
+        <div class="cursorToHand" data-toggle="collapse" data-target=<%="#" + n.to_s %>><h3><i class="fa fa-plus-circle" aria-hidden="true"></i><%= " " + q %></h3></div>
+    <div id=<%= n.to_s %> class="collapse">
+        <br>
+        <div class="faqText"> <%= a %></div>
+    </div>
     <br>
-    <ul>
-        <% faqs().each do |n, q, a| %>
-            <li class="faqli"><a class="faqLinks" href=<%="#" + n.to_s %>><%= q %></a></li>
-    <% end %>
-    </ul>
-</div>
-<div class="filler">
-</div>
-<% faqs().each do |num, question, answer| %>
-    <a name= <%= num.to_s %>></a>
-
-<div class="whiteBox col-xs-10 col-sm-8 col-md-8 col-lg-8 col-xs-offset-1 col-sm-offset-2 col-md-offset-2 col-lg-offset-2">
-    <h1 class="greenQuestion"><%= question%></h1>
-
-</div>
-<div class="clearFix"></div>
-<div class="faqText col-xs-10 col-sm-8 col-md-8 col-lg-8 col-xs-offset-1 col-sm-offset-2 col-md-offset-2 col-lg-offset-2"></p><%= answer %></p><br></div>
-<br>
 <% end %>
