@@ -24,7 +24,7 @@
 }
 #body{
     height: 100%;
-    background-color: #e6e6e6;
+    background-color: #F6F7F7;
 }
 html {
     height: 100%;
@@ -158,7 +158,7 @@ div.bigCardTitle a{
 .bigCard {
     background: #FFFFFF;
     border-radius: 7px;
-    border: 1px black solid;
+    border: 1px #cccccc solid;
     color: black;
     width: 90%;
     padding-left: 0px;
