@@ -185,7 +185,7 @@ div.bigCardTitle a{
 .bigCard {
     background: #FFFFFF;
     border-radius: 7px;
-    border: 1px black solid;
+    border: 1px #cccccc solid;
     color: black;
     width: 90%;
     padding-left: 0px;
@@ -310,4 +310,8 @@ div.bigCardTitle a{
 .faqText {
     font-size: 14pt;
 
+}
+.navIcon {
+    margin-top: -3px;
+    height: 25px;
 }
