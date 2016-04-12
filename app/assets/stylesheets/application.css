@@ -284,3 +284,7 @@ div.bigCardTitle a{
     font-size: 14pt;
 
 }
+.navIcon {
+    margin-top: -3px;
+    height: 25px;
+}
