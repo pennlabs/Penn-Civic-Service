@@ -1,6 +1,11 @@
 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-6 col-lg-offset-4 col-md-offset-4 col-sm-offset-4 col-xs-offset-3" style="position: relative; transform: translateY(-40%); top: 30%">
-  <div class="formStyle">
-    <% if flash[:error] %>
+  <div class="formStyle">   
+      <script>
+        document.getElementsByTagName("body")[0].style.backgroundColor = "#16A085";
+      </script>
+      <center><%= image_tag( "Icons/pennvolvementlogo.png", :alt => "rss feed", :class => "logoLogin speedyAnimation", :animation => "bounceIn",)%></center>
+      <br>
+      <% if flash[:error] %>
       <div id="error_explanantion">
         <div class="alert alert-danger">
           <p> <%= flash[:error] %> </p>

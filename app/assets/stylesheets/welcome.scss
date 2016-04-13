@@ -20,21 +20,27 @@ input {
     max-width: 350px;
     min-width: 200px;
     width: 100%;
-    background: #00916A;
+    background: #FFFFFF;
     padding: 5px;
     border-radius: 9px;
     border-right: solid 4px #191C2F;
     border-bottom: solid 4px #191C2F;
 }
-input[type="submit"]{
-    background: #F24901;
+input [type="submit"] {
     border: 1px solid #F24901;
     color: white;
     width: 20%;
     border-radius: 20px;
-
+    text-align: center;
 }
 body{
     background-color: #FFFFFF;
+}
+.logoLogin {
+    text-align: center;
+    width: 80%;
+}
+.formStyle input[type="text"], .formStyle input[type="password"] {
+    border: 1px #16A085 solid; 
 }
 

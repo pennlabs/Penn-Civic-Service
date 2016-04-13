@@ -1,7 +1,7 @@
 <% @events.each do |event| %>
     <div class="bigCard">
-        <div class="bigCardTitle col-xs-9 col-sm-9 col-md-9 col-lg-9"><strong><%= link_to event.title, event %></strong> with <strong><span class="orgName"><%= event.user.org_name %></span></strong> </div>
-        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+        <div class="bigCardTitle col-xs-7 col-sm-9 col-md-9 col-lg-9"><strong><%= link_to event.title, event %></strong> with <strong><span class="orgName"><%= event.user.org_name %></span></strong> </div>
+        <div class="col-xs-5 col-sm-3 col-md-3 col-lg-3">
             <span class="tinyText"> SIGN UP BY: </span>
             <div class="deadlineBox">
                 <%= event.deadline %>
@@ -11,7 +11,7 @@
             <%= event.description[0..150] %><br>
         </div>
 
-    <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+    <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4">
         <%= image_tag( "Icons/calendar.png", :alt => "rss feed", :class => "calendar speedyAnimation", :animation => "bounceIn",)%>
         <span class="calNum"><%= event.date[8..9] %></span>
         <span class="calMonth"><%= to_month(event.date[5..6])[0..2] %></span>
@@ -20,7 +20,7 @@
         <span><%= image_tag( "Icons/locationicon.png", :alt => "rss feed", :class => "tinyIcons calendar speedyAnimation locationPin", :animation => "bounceIn",)%></span>
     <%= event.location%>
     </div>
-    <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4 rightAlign">
+    <div class="col-xs-5 col-sm-4 col-md-4 col-lg-4 rightAlign">
         <% get_pictures(((event.cause_type.select {|k, v| v.match("1")}).keys)[0..2]).each do |p| %>
             <%= image_tag( "Icons/" + p, :alt => "rss feed", :class => "tinyIcons speedyAnimation", :animation => "bounceIn", :title => get_cause_from_pic(p)) %>
         <% end %>
