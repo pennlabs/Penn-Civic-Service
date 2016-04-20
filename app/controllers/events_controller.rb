@@ -20,6 +20,9 @@ class EventsController < ApplicationController
     # GET /events/1/edit
     def edit
       @details = Event.find(params['id'])
+      if current_user.username != @details.user.username
+        redirect_to '/'
+      end
     end
 
     # POST /events
