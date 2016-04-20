@@ -128,8 +128,6 @@ div#backd input[type="email"]{
 div#backd input[type="submit"]{
     color: white;
 }
-
-
 .fullHeight {
     margin-left: 20px;
 }
@@ -140,7 +138,7 @@ div#backd input[type="submit"]{
     padding-top: 20px;
     margin-left: 55px;
     border-radius: 8px;
-    border: 1px solid #000;
+    border: 1px solid #cccccc;
 }
 .searchIcons {
     padding-left: 60%;
@@ -155,16 +153,17 @@ div#backd input[type="submit"]{
     color: white;
 }
 .contact_form {
-    background: #FFF;
-    border-top: white solid 2px;
-    border-bottom: white solid 2px;
-    color: #696969;
-
+    color: #FFFFFF;
+    margin-top: -47px;
+}
+.bigCardTitle {
+    padding-top: 5px;
 }
 div.bigCardTitle a{
     color: #ff471a;
     font-size: 17pt;
     padding-left: 7px;
+    font-family: 'MuseoSlab-500';
 }
 .orgName {
     color: #009933;
@@ -187,6 +186,7 @@ div.bigCardTitle a{
     color: black;
     width: 100%;
     padding-left: 0px;
+    padding-bottom: 5px;
     overflow-x: hidden;
     overflow-y: auto;
 }
@@ -214,8 +214,7 @@ div.bigCardTitle a{
 }
 .locationPin {
     width: 35px;
-    height: 45px;
-    margin-top: 20px;
+    margin-top: 10px;
 }
 .tinyIcons {
     margin-top: 27px;
@@ -316,4 +315,13 @@ div.bigCardTitle a{
 .navIcon {
     margin-top: -3px;
     height: 25px;
+}
+input[type="submit"] {
+    text-align: center;
+}
+.vertCenter {
+    padding-top: 9px;
+} 
+.bigCardText {
+    padding-bottom: 15px;
 }
