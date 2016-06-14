@@ -20,6 +20,9 @@ class EventsController < ApplicationController
     # GET /events/1/edit
     def edit
       @details = Event.find(params['id'])
+      if current_user.username != @details.user.username
+        redirect_to '/'
+      end
     end
 
     # POST /events
@@ -59,7 +62,7 @@ class EventsController < ApplicationController
     def destroy
         @event.destroy
         respond_to do |format|
-            format.html { redirect_to events_url, notice: 'Event was successfully destroyed.' }
+            format.html { redirect_to '/users/' + @event.user_id.to_s }
             format.json { head :no_content }
         end
     end
@@ -98,10 +101,28 @@ class EventsController < ApplicationController
         @dist.sort_by! {|i| i.first}
         @dist.each do |i|
             if i.first < 1
-                @events.push(i[1])
+               # @events.push(i[1])
             end
         end
+	@cat = Array.new
+	switch = false
+	self.class.helpers.cause().each do |title, pic|
+		if (pic[0..-5] == @query.downcase)
+			switch = true
+		end
+	end
+	Event.all.each do |event|
+		event.cause_type.each do |p, v| 
+			if p ==  @query.downcase && v == "1"
+				@cat.push(event)
+			end
+		end
+	end
+	if switch
+		@events = @cat
+	end
         render :results
+
     end
 
     private

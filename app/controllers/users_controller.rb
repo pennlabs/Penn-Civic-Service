@@ -11,6 +11,9 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
+    if current_user.username != @user.username
+      redirect_to '/'
+    end
   end
 
   # GET /users/new
@@ -46,7 +49,7 @@ class UsersController < ApplicationController
         format.html { redirect_to @user, notice: 'User was successfully updated.' }
         format.json { render :show, status: :ok, location: @user }
       else
-        format.html { render :edit }
+        format.html { render :template => "users/show"  }
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end
     end
