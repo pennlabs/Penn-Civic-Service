@@ -5,7 +5,7 @@
     <script>
        document.getElementById("<%= "#" + n.to_s + "Prime" %>").onclick = function() {
            var a = document.getElementById("<%= "#" + n.to_s + "Prime" %>");
-           if (a.innerHTML.indexOf("plus") >= 0) {
+           if (a.innerHTML.indexOf("plus") > -1) {
                 a.innerHTML = a.innerHTML.replace("plus","minus");
            } else {
                 a.innerHTML = a.innerHTML.replace("minus", "plus"); 
