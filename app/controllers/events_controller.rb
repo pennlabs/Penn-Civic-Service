@@ -101,10 +101,28 @@ class EventsController < ApplicationController
         @dist.sort_by! {|i| i.first}
         @dist.each do |i|
             if i.first < 1
-                @events.push(i[1])
+               # @events.push(i[1])
             end
         end
+	@cat = Array.new
+	switch = false
+	self.class.helpers.cause().each do |title, pic|
+		if (pic[0..-5] == @query.downcase)
+			switch = true
+		end
+	end
+	Event.all.each do |event|
+		event.cause_type.each do |p, v| 
+			if p ==  @query.downcase && v == "1"
+				@cat.push(event)
+			end
+		end
+	end
+	if switch
+		@events = @cat
+	end
         render :results
+
     end
 
     private
