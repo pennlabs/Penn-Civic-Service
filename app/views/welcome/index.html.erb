@@ -2,7 +2,7 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 <div>
     <div style = "float: left; width:50%; height: 400px; background-color: #1ABC9C">
-        <center><p style="padding-top: 120px; font-size: 26pt; color: #FFFFFF; line-height: 100%;">Be a friend. Lend a hand.</p></center>
+        <center><h1 style="padding-top: 120px; font-size: 26pt; color: #FFFFFF; line-height: 100%">Be a friend. Lend a hand.</h1></center>
         <center><%= image_tag('Icons/hands.png', :style => "padding-top: 76px; width: 250px; height: auto")%></center>
     </div>
     <div id="rightPanel" style = "float: right; width:50%; height: 400px; background-color: #16A085;">
@@ -33,29 +33,40 @@
             <center><h1>Want to tell the world?</h1></center>
             <center>    
                 <br>
-                <a style="padding-right: 10%; font-size: 32pt; color: #3572FF; text-decoration: underline;" href="http://www.facebook.com/sharer.php?u=http://www.penncivicservice.com">
-                    <i class="fa fa-facebook-official"></i></a>
-                <a style="padding-right: 10%; font-size: 32pt; color: #01CEC1; text-decoration: underline;" href="https://twitter.com/home?status=Check%20out%20www.penncivicservice.com%20and%20make%20a%20difference%20in%20Philly!">
-                    <i class="fa fa-twitter"></i></a>
-                <a style="font-size: 32pt; color: #FF3564; text-decoration: underline;" href="https://plus.google.com/share?url=http://www.penncivicservice.com">
-                    <i class="fa fa-google-plus"></i></a>
-
+                <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 col-xs-offset-3 col-sm-offset-3 col-md-offset-3 col-lg-offset-3">
+                    <div style="background-color: white; width: 80px; height:80px; border-radius: 40px; line-height: 85px;">
+                        <center><a style="font-size: 32pt; color: #3572FF; text-decoration: underline;" href="http://www.facebook.com/sharer.php?u=http://www.penncivicservice.com">
+                                <i class="fa fa-facebook-official"></i></a></center>
+                    </div>
+                </div>
+                <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 col-xs-offset-1 col-sm-offset-1 col-md-offset-1 col-lg-offset-1">
+                    <div style="background-color: white; width: 80px; height:80px; border-radius: 40px; line-height: 85px;">
+                        <center><a style="font-size: 32pt; color: #01CEC1; text-decoration: underline;" href="https://twitter.com/home?status=Check%20out%20www.penncivicservice.com%20and%20make%20a%20difference%20in%20Philly!">
+                                <i class="fa fa-twitter"></i></a>
+                        </center>
+                    </div>
+                </div>
+                <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 col-xs-offset-1 col-sm-offset-1 col-md-offset-1 col-lg-offset-1">
+                    <div style="background-color: white; width: 80px; height:80px; border-radius: 40px; line-height: 85px;">
+                        <center><a style="font-size: 32pt; color: #FF3564; text-decoration: underline;" href="https://plus.google.com/share?url=http://www.penncivicservice.com">
+                                <i class="fa fa-google-plus"></i></a>
+                        </center>
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
 
-</center>
-        <% end %>
+        </center>
+    <% end %>
     </div>
 </div>
 <div style="display: inline-block; width: 100%; min-height: 180px; background-color: #FFFFFF;">
     <br>
     <span style = "padding-left: 30px; padding-top: 15px; color: #F24901; font-size: 14pt;"><strong>Start your search here ...</strong></span>
-<div style="width: 100%; padding-top: 5px;">
-    <span class="paddSpan"><a href="/search?query=community"><%= image_tag('Icons/community.png', :alt => "rss feed", :class => "icons")%></a></span>
-    <span class="paddSpan"><a href="/search?query=hunger"><%= image_tag('Icons/hunger.png', :alt => "rss feed", :class => "icons")%></a></span>
-    <span class="paddSpan"><a href="/search?query=woman"><%= image_tag('Icons/woman.png', :alt => "rss feed", :class => "icons")%></a></span>
-    <span class="paddSpan"><a href="/search?query=animal"><%= image_tag('Icons/animal.png', :alt => "rss feed", :class => "icons")%></a></span>
-    <span class="paddSpan"><a href="/search?query=education"><%= image_tag('Icons/education.png', :alt => "rss feed", :class => "icons")%></a></span>
+    <div style="width: 100%; padding-top: 5px;">
+        <span class="paddSpan"><a href="/search?query=community"><%= image_tag('Icons/community.png', :alt => "rss feed", :class => "icons")%></a></span>
+        <span class="paddSpan"><a href="/search?query=hunger"><%= image_tag('Icons/hunger.png', :alt => "rss feed", :class => "icons")%></a></span>
+        <span class="paddSpan"><a href="/search?query=woman"><%= image_tag('Icons/woman.png', :alt => "rss feed", :class => "icons")%></a></span>
+        <span class="paddSpan"><a href="/search?query=animal"><%= image_tag('Icons/animal.png', :alt => "rss feed", :class => "icons")%></a></span>
+        <span class="paddSpan"><a href="/search?query=education"><%= image_tag('Icons/education.png', :alt => "rss feed", :class => "icons")%></a></span>
     </div>
 </div>
