@@ -101,7 +101,7 @@ class EventsController < ApplicationController
         @dist.sort_by! {|i| i.first}
         @dist.each do |i|
             if i.first < 1
-               # @events.push(i[1])
+               @events.push(i[1])
             end
         end
 	@cat = Array.new
