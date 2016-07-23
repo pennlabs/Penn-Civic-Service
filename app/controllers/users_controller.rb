@@ -28,10 +28,11 @@ class UsersController < ApplicationController
   # POST /users
   # POST /users.json
   def create
-    @user = User.new(user_params)
+    @user = User.new(user_params.merge(:confirmed => false))
     respond_to do |format|
       if @user.save
-        format.html { redirect_to '/login', notice: '' }
+        UserMailer.registration_confirmation(@user).deliver
+	format.html { redirect_to '/login?q=1', notice: '' }
         format.json { render :show, status: :created, location: @user }
       else
         format.html { render :new }
@@ -73,6 +74,6 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:username, :email, :password, :password_confirmation, :org_name, :org_url, :org_address, :city, :state, :zipcode, :firstname, :lastname)
+      params.require(:user).permit(:username, :email, :password, :password_confirmation, :org_name, :org_url, :org_address, :city, :state, :zipcode, :firstname, :lastname, :confirmed)
     end
 end
