@@ -1,6 +1,7 @@
 class CreateUsers < ActiveRecord::Migration
   def change
     create_table :users do |t|
+      t.string :confirm_token
       t.string :firstname
       t.string :lastname
       t.string :username
@@ -14,6 +15,7 @@ class CreateUsers < ActiveRecord::Migration
       t.string :state
       t.string :zipcode
       t.timestamps null: false
+      t.boolean :confirmed, default: false
     end
   end
 end
