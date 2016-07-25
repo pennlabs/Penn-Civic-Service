@@ -30,12 +30,15 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params.merge(:confirmed => false))
     respond_to do |format|
-      if @user.save
+      if @user.email.index("upenn.edu") && @user.save
         UserMailer.registration_confirmation(@user).deliver
 	format.html { redirect_to '/login?q=1', notice: '' }
         format.json { render :show, status: :created, location: @user }
       else
-        format.html { render :new }
+        if !@user.email.index("upenn.edu")
+	  @user.errors[:base] << "Must have a upenn.edu email"
+	end
+	format.html { render :new }
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end
     end

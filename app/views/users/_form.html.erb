@@ -45,7 +45,7 @@
         <% end %>
     </div>
     <div class = "field">
-        <%= f.label :email %> <br>
+        <%= f.label :email, "Email (upenn.edu required)" %> <br>
         <% if prev %>
           <%= f.text_field :email, :value => params['user']['email'], :placeholder => 'Email' %>
         <% else %>

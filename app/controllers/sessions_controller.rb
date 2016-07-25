@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
 
   def create
     @user = User.find_by(username: params[:username])
-    if @user && @user.authenticate(params[:password])
+    if @user && @user.confirmed && @user.authenticate(params[:password])
       session[:user_id] = @user.id
       redirect_to '/'
     else
@@ -21,4 +21,12 @@ class SessionsController < ApplicationController
     reset_session
     redirect_to '/', notice: 'Session was successfully destroyed.'
   end
+
+  def confirm
+    @user = User.find_by(confirm_token: params[:c])
+    if @user
+      @user.update_attribute :confirmed, true
+    end
+    redirect_to '/login' 
+ end
 end

@@ -9,6 +9,7 @@ A volunteer job board for Penn students by Penn Labs.
 - clone the project with `git clone https://github.com/pennlabs/Penn-Civic-Service.git`
 - install all the project dependencies (`bundle install`)
 - migrate the database (`rake db:migrate`)
+- additionally to configure email confirmation, install mailx
 - finally, run `rails s`
 - after doing all the setup instructions and running rails s, navigate to localhost:3000
 
