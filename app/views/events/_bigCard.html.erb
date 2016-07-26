@@ -4,7 +4,11 @@
         <div class="col-xs-5 col-sm-3 col-md-3 col-lg-3">
             <span class="tinyText"> SIGN UP BY: </span>
             <div class="deadlineBox">
-                <%= event.deadline %>
+                <% if (event.deadline) %>
+		  <%= event.deadline %>
+		<% else %>
+		  <%= "Ongoing" %>
+  		<% end %>
             </div>
         </div>
         <div class="bigCardText col-xs-12 col-sm-10 col-md-10 col-lg-10">

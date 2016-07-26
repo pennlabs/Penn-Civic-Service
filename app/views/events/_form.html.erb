@@ -66,9 +66,8 @@ if ($("#event_date").prop("type") != 'date') {
 		a.disabled = true;
 		}
 		else {
-		var a = document.getElementsByName("event[deadline]")[0]
-		a.type = 'date';
-		a.disabled = false;
+		$("#event_deadline").datepicker({ dateFormat: 'yy-mm-dd' });
+		$("#event_deadline").disabled = false;
 		}	
 		});</script>
 <br>
