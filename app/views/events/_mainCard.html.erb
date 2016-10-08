@@ -14,7 +14,7 @@
         <div class="row">
             <span class="tinyText"> SIGN UP BY: </span>
             <div class="deadlineBox">
-                <% if event.deadline %>
+                <% if event.deadline != "" && event.deadline %>
 		  <%= event.deadline %>
 		<% else %>
 		  <%= "Ongoing" %>

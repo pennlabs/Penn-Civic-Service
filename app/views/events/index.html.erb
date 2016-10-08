@@ -16,7 +16,11 @@
     <% end %>
     </div>
     <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12 col-lg-offset-1 col-md-offset-1 col-sm-offset-1">
-        <% if @events.empty? %>
+    <% go = false%>
+    <% @events.each do |event| %>
+	<% go = go || (Time.parse(event.date + " " + event.time) > Time.now) %>
+    <% end %>    
+    <% if @events.empty? || !go%>
 		<div class="row center-text"><h1>We weren't able to find anything at this time. Please check back later.</h1>
 		<br>
 		<%= image_tag("sadface.png", :alt => "sadface" , :style => "width: 20vw; height: auto; padding-top: 16vh;") %>

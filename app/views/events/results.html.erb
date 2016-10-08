@@ -1,5 +1,9 @@
 <div class="col-xs-offset-1 col-sm-offset-1 col-md-offset-1 col-lg-offset-1 col-xs-10 col-sm-10 col-md-10 col-lg-10">
-	<% if @events.empty? %>
+	<% go = false %>
+	<% @events.each do |event| %>
+		<% go = go || Time.parse(event.date + " " + event.time) > Time.now %>
+	<% end %>
+	<% if @events.empty? || !go%>
 		<div class="row center-text"><h1>We weren't able to find anything at this time. Please check back later.</h1>        
 			<%= image_tag("sadface.png", :alt => "sadface" , :style => "width: 20vw; height: auto; padding-top: 18vh;") %>
 		</div>                 

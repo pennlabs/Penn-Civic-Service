@@ -14,6 +14,10 @@
    
     <%= render 'layouts/nav' %>
     <%= yield %>
-
+<div class="clearfix"></div>
+<footer style="width: 100%; text-align: right; background-color: #e6e6e6">
+	<%= image_tag("labs.png", :alt => "labs" , :style => "width: 100px; height: auto; padding: 10px;") %>
+	<%= image_tag("ua.png", :alt => "ua" , :style => "width: 100px; height: auto; padding: 10px;") %>
+</footer>
 </body>
 </html>

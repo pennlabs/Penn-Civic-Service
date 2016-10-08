@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :users, :except => [:index]
   get '/faq' => 'welcome#about'
   
+  get '/orgs' => 'welcome#orgs'
   # account creation
 #  get '/signup' => 'users#new'
   post '/signup' => 'welcome#signup'

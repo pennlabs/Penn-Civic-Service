@@ -55,22 +55,8 @@ if ($("#event_date").prop("type") != 'date') {
 <%= f.url_field :url , :id => "urlInput", :placeholder => "http://"%>
 </div>
 <div class="col-xs-8 col-xs-offset-2 col-md-4 col-sm-4 col-lg-4 col-sm-offset-1 col-md-offset-1 col-lg-offset-1">
-<%= f.label :deadline, "Deadline (Date)" %>
+<%= f.label :deadline, "Deadline (Leave blank if ongoing)" %>
 <%= f.date_field :deadline, min: Date.today, max: "2099-12-31"%>
-<input type="checkbox" id="change">Check if Deadline is Ongoing</input><br>
-<script>$("#change").click(function() {
-		if ($("#change").prop("checked")) {
-		var a = document.getElementsByName("event[deadline]")[0]
-		a.type = 'text'; 
-		a.value ="Ongoing";
-		a.disabled = true;
-		}
-		else {
-		$("#event_deadline").datepicker({ dateFormat: 'yy-mm-dd' });
-		$("#event_deadline").disabled = false;
-		}	
-		});</script>
-<br>
 </div>
 <div class="clearfix"></div>
 <div class="desc col-xs-8 col-xs-offset-2 col-md-4 col-sm-4 col-lg-4 col-sm-offset-1 col-md-offset-1 col-lg-offset-1">
