@@ -17,22 +17,22 @@
 
 @font-face {
     font-family: 'AvenirLTStd-Book';
-    src: url('AvenirLTStd-Book.eot');
-    src: url('AvenirLTStd-Book.eot?#iefix') format('embedded-opentype'),
-    url('AvenirLTStd-Book.woff') format('woff'),
-    url('AvenirLTStd-Book.ttf') format('truetype'),
-    url('AvenirLTStd-Book.svg#open_sansregular') format('svg');
+    src: asset_url('AvenirLTStd-Book.eot');
+    src: asset_url('AvenirLTStd-Book.eot?#iefix') format('embedded-opentype'),
+    asset_url('AvenirLTStd-Book.woff') format('woff'),
+    asset_url('AvenirLTStd-Book.ttf') format('truetype'),
+    asset_url('AvenirLTStd-Book.svg#open_sansregular') format('svg');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'MuseoSlab-500';
-    src: url('MuseoSlab-500.eot');
-    src: url('MuseoSlab-500.eot?#iefix') format('embedded-opentype'),
-    url('MuseoSlab-500.woff') format('woff'),
-    url('MuseoSlab-500.ttf') format('truetype'),
-    url('MuseoSlab-500.svg#open_sansregular') format('svg');
+    src: asset_url('MuseoSlab-500.eot');
+    src: asset_url('MuseoSlab-500.eot?#iefix') format('embedded-opentype'),
+    asset_url('MuseoSlab-500.woff') format('woff'),
+    asset_url('MuseoSlab-500.ttf') format('truetype'),
+    asset_url('MuseoSlab-500.svg#open_sansregular') format('svg');
     font-weight: normal;
     font-style: normal;
 }
