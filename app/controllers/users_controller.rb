@@ -31,17 +31,16 @@ class UsersController < ApplicationController
     respond_to do |format|
       if @user.email.index("upenn.edu") && @user.save
         UserMailer.registration_confirmation(@user).deliver
-	format.html { redirect_to '/login?q=1', notice: '' }
+	      format.html { redirect_to '/login?q=1', notice: '' }
         format.json { render :show, status: :created, location: @user }
       else
         if !@user.email.index("upenn.edu")
-	  @user.errors[:base] << "Must have a upenn.edu email"
-	end
-	format.html { render :new }
+	        @user.errors[:base] << "Must have a upenn.edu email"
+	      end
+	      format.html { render :new }
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end
     end
-    #end
   end
 
   # PATCH/PUT /users/1
