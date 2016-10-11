@@ -1,5 +1,5 @@
 config.action_mailer.delivery_method = :smtp
-# SMTP settings for gmail
+# SMTP settings
 config.action_mailer.smtp_settings = {
 	:address              => "smtp.sendgrid.net",
 	:port                 => 587,
