@@ -1,5 +1,9 @@
-Hi <% @user.firstname %>, 
+Hi <% @user.firstname %>,
 
 Thank you for registering with Pennvovlement! To finish creating your account please click the following link:
 
-</a href=<%= "http://localhost:3000/confirm?c=" + @user.confirm_token%>>Confirm your Account</a>
+</a href="<%=@url%>">Confirm your Account</a>
+Link: <%=@url%>
+
+Thanks!
+Penn Labs

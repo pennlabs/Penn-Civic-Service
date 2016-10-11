@@ -1,9 +1,9 @@
 class UserMailer < ActionMailer::Base
+  default from: "noreply@pennvolvement.com"
+  layout 'registration_confirmation'
+
 	def registration_confirmation(user)
-		@user = user
-		msg = "Hello " + "#{user.firstname}, \n\n" +
-                "Click the following link to finish setting up your account:\n \n" +
-		"http://pennvolvement.com/confirm?c=#{user.confirm_token}"
-		`echo "#{msg}" | mailx -s "Pennvovlement Email Confirmation" #{user.email} -aFrom:noreply@pennvolvement.com`
+    @url = "https://pennvolvement.com/confirm?c=#{user.confirm_token}"
+    mail(to: user.email, subject: 'Pennvolvement Email Confirmation')
 	end
 end
