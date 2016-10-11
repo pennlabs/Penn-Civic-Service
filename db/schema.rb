@@ -30,10 +30,11 @@ ActiveRecord::Schema.define(version: 20160126003212) do
   add_index "events", ["user_id"], name: "index_events_on_user_id"
 
   create_table "users", force: :cascade do |t|
+    t.string   "confirm_token"
     t.string   "firstname"
     t.string   "lastname"
     t.string   "username"
-    t.string   "password_hash"
+    t.string   "password_digest"
     t.string   "email"
     t.string   "org_name"
     t.string   "org_url"
@@ -42,8 +43,9 @@ ActiveRecord::Schema.define(version: 20160126003212) do
     t.string   "city"
     t.string   "state"
     t.string   "zipcode"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
+    t.boolean  "confirmed",       default: false
   end
 
 end
