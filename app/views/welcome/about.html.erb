@@ -3,16 +3,21 @@
 <br>
 <div class="whiteBox col-xs-10 col-sm-8 col-md-8 col-lg-8 col-xs-offset-1 col-sm-offset-2 col-md-offset-2 col-lg-offset-2">
     <% faqs().each do |n, q, a| %>
-        <div class="cursorToHand" data-toggle="collapse" data-target=<%="#" + n.to_s %>><h3 id=<%= "#" + n.to_s + "Prime" %>><i class="fa fa-plus-circle" aria-hidden="true"></i><%= " " + q %></h3></div>
+    <div class="cursorToHand" data-toggle="collapse" data-target=<%="#" + n.to_s %>>
+      <h3 id=<%= "#" + n.to_s + "Prime" %>>
+        <i class="fa fa-plus-circle" data-toggle="collapse" data-target=<%="#" + n.to_s %> aria-hidden="true"></i>
+        <%= " " + q %>
+      </h3>
+    </div>
     <script>
-       document.getElementById("<%= "#" + n.to_s + "Prime" %>").onclick = function() {
-           var a = document.getElementById("<%= "#" + n.to_s + "Prime" %>");
-           if (a.innerHTML.indexOf("plus") > -1) {
-                a.innerHTML = a.innerHTML.replace("plus","minus");
-           } else {
-                a.innerHTML = a.innerHTML.replace("minus", "plus"); 
-           }
-       }
+      document.getElementById("<%= "#" + n.to_s + "Prime" %>").onclick = function() {
+        var a = document.getElementById("<%= "#" + n.to_s + "Prime" %>");
+        if (a.innerHTML.indexOf("plus") > -1) {
+          a.innerHTML = a.innerHTML.replace("plus","minus");
+        } else {
+          a.innerHTML = a.innerHTML.replace("minus", "plus");
+        }
+      }
     </script>
     <div id=<%= n.to_s %> class="collapse">
         <br>
