@@ -2,6 +2,7 @@ language: ruby
 rvm:
   - 2.3
   - jruby
+    - Xcext.enabled=true
   - rbx-2
 group: stable
 dist: precise
