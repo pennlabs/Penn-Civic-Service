@@ -30,7 +30,9 @@ class EventsController < ApplicationController
     def create
         @event = Event.new(event_params)
         @event.cause_type = params[:cause_type]
-        current_user.events.append(@event)
+        if current_user
+            current_user.events.append(@event)
+        end
         respond_to do |format|
             if @event.save
                 format.html { redirect_to '/events' }
