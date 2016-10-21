@@ -1,9 +1,11 @@
 language: ruby
 rvm:
-  - 2.3
-  - jruby
+  - 2.2.3
+  # - jruby
     # - Xcext.enabled=true
-  - rbx-2
+  # - rbx-2
 group: stable
 dist: precise
 os: linux
+notifications:
+  email: false
