@@ -1,6 +1,6 @@
 language: ruby
 rvm:
-  - 2.3
+  - 2.2.3
   - jruby
     # - Xcext.enabled=true
   - rbx-2
