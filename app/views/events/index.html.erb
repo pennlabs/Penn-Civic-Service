@@ -19,7 +19,7 @@
     <% go = false%>
     <% @events.each do |event| %>
 	<% go = go || (Time.parse(event.date + " " + event.time) > Time.now) %>
-    <% end %>    
+    <% end %>
     <% if @events.empty? || !go%>
 		<div class="row center-text"><h1>We weren't able to find anything at this time. Please check back later.</h1>
 		<br>
