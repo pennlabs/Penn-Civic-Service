@@ -7,3 +7,5 @@ rvm:
 group: stable
 dist: precise
 os: linux
+notifications:
+  email: false
