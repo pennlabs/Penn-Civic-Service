@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 <div class="row" style="">
-    <div id="searchPanel" class="fullHieght col-lg-3 col-md-3 col-sm-3 hidden-xs">
+    <div id="searchPanel" class="fullHeight col-lg-3 col-md-3 col-sm-3 hidden-xs">
         <div class="toTop"><h2>Filter by cause...</h2></div>
         <% cause().each do |title, pic|%>
             <a href=<%= "/search?query=" + pic.gsub(".png","")%> class="black">
