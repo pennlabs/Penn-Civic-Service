@@ -133,10 +133,13 @@ div#backd input[type="submit"]{
 .fullHeight {
     margin-left: 20px;
 }
+.row{
+    max-width: 90vw;
+}
 #searchPanel{
     background: white;
     overflow-y: scroll;
-    max-height: 90vh;
+    max-height: 85vh;
     padding-top: 20px;
     margin-left: 55px;
     border-radius: 8px;
