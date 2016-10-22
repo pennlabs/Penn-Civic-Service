@@ -3,4 +3,3 @@
 <% User.all.each do |u| %>
   <tr><td><%= u.firstname + " " + u.lastname  %></td><td><%="| " +  u.org_name %></td></tr>
 <% end %>
-<script>$('footer').remove()</script>
