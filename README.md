@@ -1,4 +1,4 @@
-# Penn Volunteer Bulletin
+# Pennvolvement
 
 A volunteer job board for Penn students by Penn Labs.
 
