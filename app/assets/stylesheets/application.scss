@@ -333,3 +333,21 @@ input[type="submit"] {
 .bigCardText {
     padding-bottom: 15px;
 }
+
+/*----Scrollbar------*/
+::-webkit-scrollbar{
+  width: 10px;  /* for vertical scrollbars */
+  height: 12px; /* for horizontal scrollbars */
+  margin-top:8px;
+}
+::-webkit-scrollbar-track {  /*the path it moves on */
+  background: rgb(240, 240, 240);
+  border-radius:8px;
+}
+::-webkit-scrollbar-thumb { /*the part that moves*/
+    background: rgb(210,210,210);
+    border-radius: 10px;
+}
+::-webkit-scrollbar-button{  /*the top and bottom part */
+  /*height:5px;*/
+}
