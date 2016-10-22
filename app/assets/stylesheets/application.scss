@@ -139,8 +139,8 @@ div#backd input[type="submit"]{
 #searchPanel{
     background: white;
     overflow-y: scroll;
-    max-height: 85vh;
-    padding-top: 20px;
+    max-height: 80vh;
+    padding-top: 10px;
     margin-left: 55px;
     border-radius: 8px;
     border: 1px solid #cccccc;
@@ -233,7 +233,9 @@ div.bigCardTitle a{
     text-align: right;
 }
 .toTop{
-    margin-top: -30px;
+    margin-top: -20px;
+    margin-left:60px;
+    margin-bottom: -10px;
 }
 .black {
     color: black;
