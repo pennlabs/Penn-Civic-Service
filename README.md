@@ -1,5 +1,7 @@
 # Penn Volunteer Bulletin
 
+[![Build Status](https://travis-ci.org/pennlabs/Penn-Civic-Service.svg?branch=master)](https://travis-ci.org/pennlabs/Penn-Civic-Service)
+
 A volunteer job board for Penn students by Penn Labs.
 
 ## Setting Up
