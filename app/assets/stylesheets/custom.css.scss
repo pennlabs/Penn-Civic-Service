@@ -16,3 +16,10 @@
     color: $state-danger-text;
   }
 }
+
+@media (max-width: 925px) {
+  #inner_footer {
+    display: none;
+    z-index: 1;
+  }
+}

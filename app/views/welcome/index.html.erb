@@ -4,7 +4,7 @@
         <div class="center"><%= image_tag('Icons/hands.png', :style => "padding-top: 76px; width: 250px; height: auto")%></div>
     </div>
     <div id="rightPanel" style="float: right; width:50%; height: 60vh; background-color: #16A085; padding-top: 22vh;">
-        <div class="center" style="text-align: right">
+        <div class="center" style="z-index: 5; text-align: right">
             <% if not logged_in? %>
                 <center><p style="color: white; width: 200px; font-size: 16pt;">Sign up to post your opportunities today.</p></center>
             <br>
@@ -23,12 +23,16 @@
                     <%= submit_tag("Sign up!", :style => "text-align: center") %>
                 </div>
             </div>
+            <div id="inner_footer" style="position: relative; left:0vw; top: 15px">
+            	<%= image_tag("labs.png", :alt => "labs" , :style => "width: 100px; height: auto; padding: 10px;") %>
+            	<%= image_tag("ua.png", :alt => "ua" , :style => "width: 100px; height: auto; padding: 10px;") %>
+            </div>
         </center>
     <% end %>
     <% else %>
             <div class="contact_form">
             <center><h1>Want to tell the world?</h1></center>
-            <center>    
+            <center>
                 <br>
                 <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 col-xs-offset-3 col-sm-offset-3 col-md-offset-3 col-lg-offset-3">
                     <a style="font-size: 32pt; color: #3572FF; text-decoration: underline;" href="http://www.facebook.com/sharer.php?u=http://www.pennvolvement.com" target="_blank"><div style="background-color: white; width: 80px; height:80px; border-radius: 40px; line-height: 85px;">
@@ -54,7 +58,7 @@
     <% end %>
     </div>
 </div>
-<div style="display: inline-block; width: 100%; min-height: 180px; background-color: #FFFFFF;">
+<div style="display: inline-block; width: 100%; min-height: 180px; background-color: #FFFFFF; height: 36%">
     <br>
     <span style = "padding-left: 30px; padding-top: 15px; color: #F24901; font-size: 14pt;"><strong>Start your search here ...</strong></span>
     <div style="width: 100%; padding-top: 5px;">
