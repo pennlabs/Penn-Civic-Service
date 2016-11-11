@@ -1,5 +1,3 @@
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 <div>
     <div style = "float: left; width:50%; height: 60vh; background-color: #1ABC9C; text-align: center">
         <div class="center"><h1 style="padding-top: 120px; font-size: 26pt; color: #FFFFFF; line-height: 100%">Be a friend. Lend a hand.</h1></div>
@@ -22,10 +20,9 @@
                 <br>
                 <div style="width: 300px;">
                     <a style="min-width: 100px; color: white;" href="/login">Login</a>
-		    <%= submit_tag("Sign up!", :style => "text-align: center") %>
+                    <%= submit_tag("Sign up!", :style => "text-align: center") %>
                 </div>
             </div>
-
         </center>
     <% end %>
     <% else %>
@@ -53,7 +50,6 @@
                     </div>
                 </div>
             </div>
-
         </center>
     <% end %>
     </div>
@@ -64,7 +60,7 @@
     <div style="width: 100%; padding-top: 5px;">
 	    <div style="text-align: center;" class="col-sm-2 col-md-2 col-lg-2 col-xs-2 col-xs-offset-1 col-sm-offset-1 col-md-offset-1 col-lg-offset-1"><a href="/search?query=community"><%= image_tag('Icons/community.png', :alt => "rss feed", :class => "icons")%></a><br><center>Community</center></div>
 	    <div style="text-align: center;" class="col-sm-2 col-md-2 col-lg-2 col-xs-2" style="text-align: center;"><a href="/search?query=hunger"><%= image_tag('Icons/hunger.png', :alt => "rss feed", :class => "icons")%></a><br><center>Hunger</center></div>
-        <div style="text-align: center;" class="col-xs-2 col-sm-2 col-lg-2 col-md-2"><a href="/search?query=women"><%= image_tag('Icons/woman.png', :alt => "rss feed", :class => "icons")%></a><br><center>Women</center></div>
+        <div style="text-align: center;" class="col-xs-2 col-sm-2 col-lg-2 col-md-2"><a href="/search?query=women"><%= image_tag('Icons/women.png', :alt => "rss feed", :class => "icons")%></a><br><center>Women</center></div>
         <div style="text-align: center;" class="col-md-2 col-xs-2 col-sm-2 col-lg-2"><a href="/search?query=animal"><%= image_tag('Icons/animal.png', :alt => "rss feed", :class => "icons")%></a><br><center>Animals</center></div>
         <div  style="text-align: center;" class="col-sm-2 col-xs-2 col-lg-2 col-md-2"><a href="/search?query=education"><%= image_tag('Icons/education.png', :alt => "rss feed", :class => "icons")%></a><br><center>Education</center></div>
     </div>
