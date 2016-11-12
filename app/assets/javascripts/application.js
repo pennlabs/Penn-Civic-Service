@@ -15,3 +15,41 @@
 //= require twitter/bootstrap
 //= require turbolinks
 //= require_tree .
+
+$(document).ready(function() {
+	var title = $('.bigCardTitle').children('a').html();
+	var orgName = $('.bigCardTitle').find('.orgName').html();
+	var location = $('#eventLocation').html();
+
+
+	if ($(window).width() < 768) {
+		if (title.length > 15) {
+			var tsub = title.substring(0,15) + "..."
+			$('.bigCardTitle').children('a').text(tsub);
+		}
+		if (orgName.length > 10) {
+			var osub = orgName.substring(0,10) + "..."
+			$('.bigCardTitle').find('.orgName').text(osub);
+		}
+		if (location.length > 13) {
+			var lsub = location.substring(0,13) + "..."
+			$('#eventLocation').text(lsub);
+		}
+	} else if ($(window).width() < 992) {
+		if (title.length > 20) {
+			var tsub = title.substring(0,20) + "..."
+			$('.bigCardTitle').children('a').text(tsub);
+		}
+		if (orgName.length > 10) {
+			var osub = orgName.substring(0,10) + "..."
+			$('.bigCardTitle').find('.orgName').text(osub);
+		}
+		if (location.length > 10) {
+			var lsub = location.substring(0,10) + "..."
+			$('#eventLocation').text(lsub);
+		}
+	}
+
+
+
+});

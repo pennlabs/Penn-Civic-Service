@@ -57,11 +57,13 @@ html {
     height: 100%;
 }
 
+
+/*
 .center {
     position: relative;
     top: 50%;
     transform: translateY(-50%);
-}
+}*/
 .center-text {
     text-align: center;
 }
@@ -138,7 +140,8 @@ div#backd input[type="submit"]{
     overflow-y: scroll;
     max-height: 90vh;
     padding-top: 20px;
-    margin-left: 55px;
+    /*margin-left: 55px;*/
+    margin-top: 20px;
     border-radius: 8px;
     border: 1px solid #cccccc;
 }
@@ -167,7 +170,7 @@ div#backd input[type="submit"]{
 div.bigCardTitle a{
     color: #ff471a;
     font-size: 17pt;
-    padding-left: 7px;
+    /*padding-left: 7px;*/
     font-family: 'MuseoSlab-500';
 }
 .orgName {

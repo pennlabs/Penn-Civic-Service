@@ -1,12 +1,10 @@
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 <div>
-    <div style = "float: left; width:50%; height: 400px; background-color: #1ABC9C">
-        <center><h1 style="padding-top: 120px; font-size: 26pt; color: #FFFFFF; line-height: 100%">Be a friend. Lend a hand.</h1></center>
-        <center><%= image_tag('Icons/hands.png', :style => "padding-top: 76px; width: 250px; height: auto")%></center>
+    <div style = "float: left; width:50%; height: 60vh; background-color: #1ABC9C; text-align: center">
+        <div class="center"><h1 style="padding-top: 120px; font-size: 26pt; color: #FFFFFF; line-height: 100%">Be a friend. Lend a hand.</h1></div>
+        <div class="center"><%= image_tag('Icons/hands.png', :style => "padding-top: 76px; width: 250px; height: auto")%></div>
     </div>
-    <div id="rightPanel" style = "float: right; width:50%; height: 400px; background-color: #16A085;">
-        <div class="center" style="z-index: 5; text-align: right">
+    <div id="rightPanel" style="float: right; width:50%; height: 60vh; background-color: #16A085; padding-top: 1vh;">
+        <div class="center" style="z-index: 5; margin-top: 35px; text-align: right;">
             <% if not logged_in? %>
                 <center><p style="color: white; width: 200px; font-size: 16pt;">Sign up to post your opportunities today.</p></center>
             <br>
@@ -22,10 +20,10 @@
                 <br>
                 <div style="width: 300px;">
                     <a style="min-width: 100px; color: white;" href="/login">Login</a>
-		    <%= submit_tag("Sign up!", :style => "text-align: center") %>
+                    <%= submit_tag("Sign up!", :style => "text-align: center") %>
                 </div>
             </div>
-            <div id="inner_footer" style="position: relative; left:0vw; top: 15px">
+            <div id="inner_footer" style="position: relative; left:0vw">
             	<%= image_tag("labs.png", :alt => "labs" , :style => "width: 100px; height: auto; padding: 10px;") %>
             	<%= image_tag("ua.png", :alt => "ua" , :style => "width: 100px; height: auto; padding: 10px;") %>
             </div>
@@ -33,31 +31,29 @@
     <% end %>
     <% else %>
             <div class="contact_form">
-            <center><h1>Want to tell the world?</h1></center>
+            <center><h1 style="margin-top: 23vh;">Want to tell the world?</h1></center>
             <center>
                 <br>
                 <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 col-xs-offset-3 col-sm-offset-3 col-md-offset-3 col-lg-offset-3">
-                    <div style="background-color: white; width: 80px; height:80px; border-radius: 40px; line-height: 85px;">
-                        <center><a style="font-size: 32pt; color: #3572FF; text-decoration: underline;" href="http://www.facebook.com/sharer.php?u=http://www.pennvolvement.com">
-                                <i class="fa fa-facebook-official"></i></a></center>
-                    </div>
+                    <a style="font-size: 32pt; color: #3572FF; text-decoration: underline;" href="http://www.facebook.com/sharer.php?u=http://www.pennvolvement.com" target="_blank"><div style="background-color: white; width: 80px; height:80px; border-radius: 40px; line-height: 85px;">
+                        <center><i class="fa fa-facebook-official"></i></center>
+                    </div></a>
                 </div>
                 <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 col-xs-offset-1 col-sm-offset-1 col-md-offset-1 col-lg-offset-1">
                     <div style="background-color: white; width: 80px; height:80px; border-radius: 40px; line-height: 85px;">
-                        <center><a style="font-size: 32pt; color: #01CEC1; text-decoration: underline;" href="https://twitter.com/home?status=Check%20out%20www.pennvolvement.com%20and%20make%20a%20difference%20in%20Philly!">
+                        <center><a style="font-size: 32pt; color: #01CEC1; text-decoration: underline;" href="https://twitter.com/home?status=Check%20out%20www.pennvolvement.com%20and%20make%20a%20difference%20in%20Philly!" target="_blank">
                                 <i class="fa fa-twitter"></i></a>
                         </center>
                     </div>
                 </div>
                 <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 col-xs-offset-1 col-sm-offset-1 col-md-offset-1 col-lg-offset-1">
                     <div style="background-color: white; width: 80px; height:80px; border-radius: 40px; line-height: 85px;">
-                        <center><a style="font-size: 32pt; color: #FF3564; text-decoration: underline;" href="https://plus.google.com/share?url=http://www.pennvolvement.com">
+                        <center><a style="font-size: 32pt; color: #FF3564; text-decoration: underline;" href="https://plus.google.com/share?url=http://www.pennvolvement.com" target="_blank">
                                 <i class="fa fa-google-plus"></i></a>
                         </center>
                     </div>
                 </div>
             </div>
-
         </center>
     <% end %>
     </div>
@@ -68,9 +64,9 @@
     <div style="width: 100%; padding-top: 5px;">
 	    <div style="text-align: center;" class="col-sm-2 col-md-2 col-lg-2 col-xs-2 col-xs-offset-1 col-sm-offset-1 col-md-offset-1 col-lg-offset-1"><a href="/search?query=community"><%= image_tag('Icons/community.png', :alt => "rss feed", :class => "icons")%></a><br><center>Community</center></div>
 	    <div style="text-align: center;" class="col-sm-2 col-md-2 col-lg-2 col-xs-2" style="text-align: center;"><a href="/search?query=hunger"><%= image_tag('Icons/hunger.png', :alt => "rss feed", :class => "icons")%></a><br><center>Hunger</center></div>
-      <div style="text-align: center;" class="col-xs-2 col-sm-2 col-lg-2 col-md-2"><a href="/search?query=woman"><%= image_tag('Icons/woman.png', :alt => "rss feed", :class => "icons")%></a><br><center>Women</center></div>
-      <div style="text-align: center;" class="col-md-2 col-xs-2 col-sm-2 col-lg-2"><a href="/search?query=animal"><%= image_tag('Icons/animal.png', :alt => "rss feed", :class => "icons")%></a><br><center>Animals</center></div>
-      <div style="text-align: center;" class="col-sm-2 col-xs-2 col-lg-2 col-md-2"><a href="/search?query=education"><%= image_tag('Icons/education.png', :alt => "rss feed", :class => "icons")%></a><br><center>Education</center></div>
+        <div style="text-align: center;" class="col-xs-2 col-sm-2 col-lg-2 col-md-2"><a href="/search?query=women"><%= image_tag('Icons/women.png', :alt => "rss feed", :class => "icons")%></a><br><center>Women</center></div>
+        <div style="text-align: center;" class="col-md-2 col-xs-2 col-sm-2 col-lg-2"><a href="/search?query=animal"><%= image_tag('Icons/animal.png', :alt => "rss feed", :class => "icons")%></a><br><center>Animals</center></div>
+        <div  style="text-align: center;" class="col-sm-2 col-xs-2 col-lg-2 col-md-2"><a href="/search?query=education"><%= image_tag('Icons/education.png', :alt => "rss feed", :class => "icons")%></a><br><center>Education</center></div>
     </div>
 </div>
 <script>
