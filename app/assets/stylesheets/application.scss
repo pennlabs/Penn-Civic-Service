@@ -333,3 +333,94 @@ input[type="submit"] {
 .bigCardText {
     padding-bottom: 15px;
 }
+
+
+/* Homepage CSS */
+
+#leftPanel {
+    float: left;
+    width: 50%;
+    height: 60vh;
+    background-color: #1ABC9C;
+    text-align: center
+}
+#panelText {
+    padding-top: 120px;
+    font-size: 26pt;
+    color: #FFFFFF;
+    line-height: 100%
+}
+#rightPanel {
+    float: right;
+    width: 50%;
+    height: 60vh;
+    background-color: #16A085;
+    padding-top: 1vh
+}
+#rightPanelForm {
+    z-index: 5;
+    margin-top: 35px;
+    text-align: right
+}
+#signUpText {
+    color: white;
+    width: 200px;
+    font-size: 16pt
+}
+#signUpButtonGroup {
+    width: 300px
+}
+#loginButton {
+    min-width: 100px;
+    color: white
+}
+#inner_footer {
+    position: relative;
+    left: 0vw
+}
+#socialText {
+    margin-top: 23vh
+}
+#fbBtnLink {
+    font-size: 32pt;
+    color: #3572FF;
+    text-decoration: underline
+}
+.socialBtn {
+    background-color: white;
+    width: 80px;
+    height: 80px;
+    border-radius: 40px;
+    line-height: 85px
+}
+#twtrBtnLink {
+    font-size: 32pt;
+    color: #01CEC1;
+    text-decoration: underline
+}
+#gPlusBtnLink {
+    font-size: 32pt;
+    color: #FF3564;
+    text-decoration: underline
+}
+#categories {
+    display: inline-block;
+    width: 100%;
+    min-height: 180px;
+    background-color: #FFFFFF;
+    height: 36%
+}
+#categoryText {
+    padding-left: 30px;
+    padding-top: 15px;
+    color: #F24901;
+    font-size: 14pt
+}
+#categoryBtns {
+    width: 100%;
+    padding-top: 5px
+}
+.textCenter {
+    text-align: center
+}
+
