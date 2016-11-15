@@ -18,7 +18,7 @@
     <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12">
     <% go = false%>
     <% @events.each do |event| %>
-	<% go = go || (Time.parse(event.date + " " + event.time) > Time.now) %>
+	<% go = go || (Time.parse(event.date) > Time.now) %>
     <% end %>
     <% if @events.empty? || !go%>
 		<div class="row center-text"><h1>We weren't able to find anything at this time. Please check back later.</h1>

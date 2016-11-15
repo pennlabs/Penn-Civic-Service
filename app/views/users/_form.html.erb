@@ -80,38 +80,6 @@
           <%= f.text_field :org_url, :placeholder => "Organization URL" %>
         <% end %>
     </div>
-    <div class="field">
-        <%= f.label :org_address %> <br>
-        <% if prev %>
-          <%= f.text_field :org_address, :value => params['user']['org_address'], :placeholder => 'Organization Address' %>
-        <% else %>
-          <%= f.text_field :org_address, :placeholder => "Organization Address" %>
-        <% end %>
-    </div>
-    <div class="field">
-        <%= f.label :city %> <br>
-        <% if prev %>
-          <%= f.text_field :city, :value => params['user']['city'], :placeholder => 'City' %>
-        <% else %>
-          <%= f.text_field :city, :placeholder => "City" %>
-        <% end %>
-    </div>
-    <div class="field">
-        <%= f.label :state %> <br>
-        <% if prev %>
-          <%= f.text_field :state, :value => params['user']['state'], :placeholder => 'State' %>
-        <% else %>
-          <%= f.text_field :state, :placeholder => "State" %>
-        <% end %>
-    </div>
-    <div class="field">
-        <%= f.label :zipcode %> <br>
-        <% if prev %>
-          <%= f.text_field :zipcode, :value => params['user']['zipcode'], :placeholder => 'Zipcode' %>
-        <% else %>
-          <%= f.text_field :zipcode, :placeholder => "Zipcode" %>
-  <% end %>
-    </div>
 </div>
 <div class="actions col-md-6 col-md-offset-6">
 	<%= f.submit 'Create Account!', :id => "newSubmit"%>

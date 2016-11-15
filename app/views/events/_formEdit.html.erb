@@ -1,3 +1,7 @@
+<script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
+<link rel="stylesheet" type="text/css" href="datepickerUI.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.js"></script>
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.css">
 <% unless logged_in? %>
     <h1> Please log in! </h1>
 <% else %>
@@ -29,9 +33,17 @@
         <%= f.date_field :date, value: @event.date %>
     </div>
     <script>
-	if ($("#event_date").prop("type") != 'date') {
-		$("#event_date").datepicker({ dateFormat: 'yy-mm-dd' });
-	} 
+      setTimeout(function() {
+        if ($("#event_date").prop("type") != 'date') {
+  	  $("#event_date").datepicker({ dateFormat: 'yy-mm-dd' });
+        }
+	if ($("#event_deadline").prop("type") != 'date') {
+  	  $("#event_deadline").datepicker({ dateFormat: 'yy-mm-dd' });
+        }
+	if ($("#event_time").prop("type") != 'time') {
+		$("#event_time").timepicker({});
+        }
+      }, 1000);
     </script>
     <div class="col-md-4 col-sm-4 col-lg-4 col-xs-offset-2 col-xs-8 col-sm-offset-1 col-md-offset-1 col-lg-offset-1">
         <%= f.label :time %>
@@ -52,7 +64,7 @@
     <div class="clearfix"></div>
     <div class="desc col-xs-8 col-xs-offset-2 col-md-4 col-sm-4 col-lg-4 col-sm-offset-1 col-md-offset-1 col-lg-offset-1">
         <%= f.label :description %>
-        <%= f.text_area :description %>
+	<%= f.text_area :description, :maxlength => "255" %>
     </div>
 
     <div class="right col-xs-8 col-md-4 col-sm-4 col-lg-4 col-xs-offset-2 col-sm-offset-1 col-md-offset-1 col-lg-offset-1">
