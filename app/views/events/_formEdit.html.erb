@@ -29,7 +29,7 @@
         <%= f.text_field :title, :maxlength => 45%>
     </div>
     <div class="col-md-4 col-sm-4 col-lg-4 col-xs-offset-2 col-xs-8 col-sm-offset-1 col-md-offset-1 col-lg-offset-1">
-        <%= f.label :date %>
+        <%= f.label :date, "Date (Not required)" %>
         <%= f.date_field :date, value: @event.date %>
     </div>
     <script>
@@ -46,7 +46,7 @@
       }, 1000);
     </script>
     <div class="col-md-4 col-sm-4 col-lg-4 col-xs-offset-2 col-xs-8 col-sm-offset-1 col-md-offset-1 col-lg-offset-1">
-        <%= f.label :time %>
+        <%= f.label :time, "Time (Not required)" %>
         <%= f.time_field :time, value: @event.time %>
     </div>
     <div class="col-md-4 col-sm-4 col-lg-4 col-xs-offset-2 col-xs-8 col-sm-offset-1 col-md-offset-1 col-lg-offset-1">
