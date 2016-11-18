@@ -33,8 +33,20 @@
     <div class="clearfix"></div>
     <div class="smallRow col-sm-4 col-md-4 col-lg-4">
         <%= image_tag( "Icons/calendar.png", :alt => "rss feed", :class => "calendar speedyAnimation", :animation => "bounceIn",)%>
-        <span class="calNum"><%= event.date[8..9] %></span>
-        <span class="calMonth"><%= to_month(event.date[5..6])[0..2] %></span>
+	<span class="calNum">
+		<% if event.date != "" %>
+			<%= event.date[8..9] %>
+		<% else %>
+			---
+		<% end %>
+	</span>
+	<span class="calMonth">
+		<% if event.date != "" %>
+			<%= to_month(event.date[5..6])[0..2] %>
+		<% else %>
+			Cal
+		<% end %>
+	</span>
     </div>
     <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
         <span><%= image_tag( "Icons/locationicon.png", :alt => "rss feed", :class => "calendar speedyAnimation locationPin", :animation => "bounceIn",)%></span>

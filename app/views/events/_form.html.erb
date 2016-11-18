@@ -36,7 +36,7 @@ Please input the following to post your event to the Penn Community. Please be a
 <%= f.text_field :title, :maxlength => 45%>
 </div>
 <div class="col-md-4 col-sm-4 col-lg-4 col-xs-offset-2 col-xs-8 col-sm-offset-1 col-md-offset-1 col-lg-offset-1">
-<%= f.label :date %>
+<%= f.label :date, "Date (Not required)" %>
 <%= f.date_field :date, min: Date.today, max: "2099-12-31"%>
 </div>
 <script>
@@ -53,7 +53,7 @@ setTimeout(function() {
 }, 1000);
 </script>
 <div class="col-md-4 col-sm-4 col-lg-4 col-xs-offset-2 col-xs-8 col-sm-offset-1 col-md-offset-1 col-lg-offset-1">
-<%= f.label :time %>
+<%= f.label :time, "Time (Not required)" %>
 <%= f.time_field :time %>
 </div>
 <div class="col-md-4 col-sm-4 col-lg-4 col-xs-offset-2 col-xs-8 col-sm-offset-1 col-md-offset-1 col-lg-offset-1">
