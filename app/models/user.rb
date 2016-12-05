@@ -8,10 +8,6 @@ class User < ActiveRecord::Base
 	validates :email, presence: true
 	validates :org_name, presence: true
 	validates :org_url, presence: true
-	validates :org_address, presence: true
-	validates :city, presence: true
-	validates :state, presence: true
-	validates :zipcode, presence: true
 	has_many :events, dependent: :destroy
 
 	has_secure_password

@@ -1,14 +1,14 @@
 <% require 'date' %>
 <% @events.each do |event| %>
-    <% if Time.parse(event.date + " " + event.time) > Time.now %>
+    <% if event.date == "" or Time.parse(event.date) > Date.today.beginning_of_day %>
     <div class="bigCard">
-        <div class="bigCardTitle col-xs-7 col-sm-9 col-md-9 col-lg-9"><%= link_to (event.title[0..30] + (if event.title.length > 30 then "..." else "" end)), event %> with <strong><span class="orgName"><%= event.user.org_name %></span></strong> </div>
+        <div class="bigCardTitle col-xs-7 col-sm-9 col-md-9 col-lg-9"><%= link_to event.title, event %> with <strong><span class="orgName"><%= event.user.org_name %></span></strong></div>
         <div class="col-xs-5 col-sm-3 col-md-3 col-lg-3">
-            <span class="tinyText"> SIGN UP BY: </span>
+            <span class="tinyText">SIGN UP BY:</span>
             <div class="deadlineBox">
                 <% if (event.deadline != "" && event.deadline) %>
 		  <%= event.deadline[0..12] %>
-		  <% if event.deadline.length > 15 %>
+		  <% if event.deadline.length > 12 %>
                       <%= "..." %>
                   <% end %>
 		<% else %>
@@ -21,15 +21,24 @@
         </div>
     <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4">
         <%= image_tag( "Icons/calendar.png", :alt => "rss feed", :class => "calendar speedyAnimation", :animation => "bounceIn",)%>
-        <span class="calNum"><%= Time.parse(event.date).to_s[8..9] %></span>
-        <span class="calMonth"><%= to_month(Time.parse(event.date).to_s[5..6])[0..2] %></span>
+	<span class="calNum">
+		<% if event.date != "" %>
+			<%= Time.parse(event.date).to_s[8..9] %>
+		<% else %>
+			---
+		<% end %>
+	</span>
+	<span class="calMonth">
+		<% if event.date != "" %>
+			<%= to_month(Time.parse(event.date).to_s[5..6])[0..2] %>
+		<% else %>
+			Cal
+		<% end %>
+	</span>
     </div>
     <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4">
         <span><%= image_tag( "Icons/locationicon.png", :alt => "rss feed", :class => "speedyAnimation locationPin", :animation => "bounceIn",)%></span>
-    <%= event.location[0..20]%>
-    <% if event.location.length > 20 %>
-       <%= "..." %>
-    <% end %>
+    <span id="eventLocation"><%= event.location %></span>
     </div>
     <div class="col-xs-5 col-sm-4 col-md-4 col-lg-4 rightAlign">
         <% get_pictures(((event.cause_type.select {|k, v| v.match("1")}).keys)[0..2]).each do |p| %>

@@ -7,7 +7,7 @@
             <br>
             <%= event.description%>
             <br><br><strong>Get More Information Here: </strong><br>
-            <%= event.url %>
+	    <a href="<%= if event.url.include?("http") then event.url else "http://" + event.url end %>">More Information</a>
         </div>
     </div>
     <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
@@ -33,8 +33,20 @@
     <div class="clearfix"></div>
     <div class="smallRow col-sm-4 col-md-4 col-lg-4">
         <%= image_tag( "Icons/calendar.png", :alt => "rss feed", :class => "calendar speedyAnimation", :animation => "bounceIn",)%>
-        <span class="calNum"><%= event.date[8..9] %></span>
-        <span class="calMonth"><%= to_month(event.date[5..6])[0..2] %></span>
+	<span class="calNum">
+		<% if event.date != "" %>
+			<%= event.date[8..9] %>
+		<% else %>
+			---
+		<% end %>
+	</span>
+	<span class="calMonth">
+		<% if event.date != "" %>
+			<%= to_month(event.date[5..6])[0..2] %>
+		<% else %>
+			Cal
+		<% end %>
+	</span>
     </div>
     <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
         <span><%= image_tag( "Icons/locationicon.png", :alt => "rss feed", :class => "calendar speedyAnimation locationPin", :animation => "bounceIn",)%></span>
@@ -45,7 +57,6 @@
             <span class="phoneIcon"><i class="fa fa-phone-square"></i></span>
         </div>
          <div class="orgText col-xs-6 col-sm-6 col-md-6 col-lg-6">
-             Org.  Address: <br> <%= event.user.org_address %><br>
              Org.  Email:  <br> <%= event.user.email %><br>
         </div>
     </div>

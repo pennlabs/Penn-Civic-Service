@@ -26,7 +26,7 @@ module EventsHelper
         causes.push(["Race & Ethnicity", "raceethnicity.png"])
         causes.push(["Sports", "sports.png"])
         causes.push(["Veterans", "veteran.png"])
-        causes.push(["Women", "woman.png"])
+        causes.push(["Women", "women.png"])
     end
 
     def get_pictures(arr)
