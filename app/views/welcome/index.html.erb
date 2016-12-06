@@ -1,9 +1,9 @@
 <div>
-    <div id="leftPanel">
+    <div id="leftPanel" class="parent-bottom">
         <div class="center"><h1 id="panelText">Be a friend. Lend a hand.</h1></div>
-        <div class="center"><%= image_tag('Icons/hands.png', :style => "padding-top: 76px; width: 250px; height: auto")%></div>
+        <div class="center child-bottom child-bottom-center"><%= image_tag('Icons/hands.png', :style => "padding-top: 76px; width: 20vw; height: auto")%></div>
     </div>
-    <div id="rightPanel" >
+    <div id="rightPanel" class="parent-bottom" >
         <div class="center" id="rightPanelForm">
             <% if not logged_in? %>
                 <center><p id="signUpText">Sign up to post your opportunities today.</p></center>
@@ -23,7 +23,7 @@
                     <%= submit_tag("Sign up!", :style => "text-align: center") %>
                 </div>
             </div>
-            <div id="inner_footer" >
+            <div class="child-bottom">
                 <%= image_tag("labs.png", :alt => "labs" , :style => "width: 128px; height: auto; padding: 10px;") %>
             </div>
         </center>

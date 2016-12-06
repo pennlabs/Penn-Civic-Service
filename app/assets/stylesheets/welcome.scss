@@ -43,6 +43,21 @@ body{
     padding-top: 22px;
 }
 .formStyle input[type="text"], .formStyle input[type="password"] {
-    border: 1px #16A085 solid; 
+    border: 1px #16A085 solid;
 }
 
+// Positioning for homepage images
+.parent-bottom {
+    position: relative;
+}
+
+.child-bottom {
+    position: absolute;
+    bottom: 0;
+}
+
+.child-bottom-center {
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+}
