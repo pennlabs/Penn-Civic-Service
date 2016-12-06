@@ -48,6 +48,9 @@
     font-weight: bold;
     border-bottom: 5px solid #D1D1D0;
 }
+.navbar-default .navbar-nav>li>a {
+    font-family: 'MuseoSlab-500';
+}
 #body {
     height: 100%;
     font-family: 'AvenirLTStd-Book';
@@ -73,8 +76,6 @@ html {
 }
 
 .icons {
-    width: 90%;
-    height: auto;
     padding-bottom: 10px;
     max-height: 130px;
     max-width: 130px;
@@ -362,7 +363,7 @@ input[type="submit"] {
     text-align: center
 }
 #panelText {
-    padding-top: 120px;
+    padding-top: 100px;
     font-size: 26pt;
     color: #FFFFFF;
     line-height: 100%
@@ -381,8 +382,8 @@ input[type="submit"] {
 }
 #signUpText {
     color: white;
-    width: 200px;
-    font-size: 16pt
+    font-size: 18pt;
+    padding-top: 70px;
 }
 #signUpButtonGroup {
     width: 300px
@@ -432,6 +433,10 @@ input[type="submit"] {
 #categoryBtns {
     width: 100%;
     padding-top: 5px
+}
+#categoryBtns center {
+    font-size: 16px;
+    margin-top: 4px;
 }
 .textCenter {
     text-align: center

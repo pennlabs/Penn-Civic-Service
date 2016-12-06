@@ -1,33 +1,35 @@
 <p id="notice"><%= notice %></p>
-<div class="row" style="">
-    <div id="searchPanel" class="fullHeight col-lg-3 col-md-3 col-sm-3 hidden-xs col-lg-offset-1 col-md-offset-1 col-sm-offset-1">
-        <div class="toTop"><h2>Filter by cause...</h2></div>
-        <% cause().each do |title, pic|%>
-            <a href=<%= "/search?query=" + pic.gsub(".png","")%> class="black">
-            <div class="row spaceOut">
-                <div class="col-lg-3 col-md-3 col-sm-3">
-                    <span class="searchIcons"><%= image_tag( "Icons/"+pic, :alt => "rss feed", :class => "opp_icons speedyAnimation", :animation => "bounceIn")%></span>
-                </div>
-                <div class="vertCenter col-lg-9 col-md-9 col-sm-9"><%= title %></div>
-                <br>
-                <br>
-            </div>
-        </a>
-    <% end %>
-    </div>
-    <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12">
-    <% go = false%>
-    <% @events.each do |event| %>
-	<% go = go || (event.date == "" || (Time.parse(event.date) > Date.today.beginning_of_day)) %>
-    <% end %>
-    <% if @events.empty? || !go%>
-		<div class="row center-text"><h1>We weren't able to find anything at this time. Please check back later.</h1>
-		<br>
-		<%= image_tag("sadface.png", :alt => "sadface" , :style => "width: 20vw; height: auto; padding-top: 16vh;") %>
-		</div>
-    <% else %>
-            <h1 style="line-height: 1">We've found some opportunities for you...</h1>
-        <%= render 'events/bigCard' %>
-    <% end %>
+<div class="container">
+    <div class="row">
+        <div id="searchPanel" class="fullHeight col-lg-3 col-md-3 col-sm-4 hidden-xs col-lg-offset-1 col-md-offset-1 col-sm-offset-1">
+            <div class="toTop"><h2>Filter by cause...</h2></div>
+            <% cause().each do |title, pic|%>
+                <a href=<%= "/search?query=" + pic.gsub(".png","")%> class="black">
+                    <div class="row spaceOut">
+                        <div class="col-lg-3 col-md-3 col-sm-3">
+                            <span class="searchIcons"><%= image_tag( "Icons/"+pic, :alt => "rss feed", :class => "opp_icons speedyAnimation", :animation => "bounceIn")%></span>
+                        </div>
+                        <div class="vertCenter col-lg-9 col-md-9 col-sm-9"><%= title %></div>
+                        <br>
+                        <br>
+                    </div>
+                </a>
+            <% end %>
+        </div>
+        <div class="col-lg-7 col-md-7 col-sm-6 col-xs-12">
+            <% go = false%>
+            <% @events.each do |event| %>
+	              <% go = go || (event.date == "" || (Time.parse(event.date) > Date.today.beginning_of_day)) %>
+            <% end %>
+            <% if @events.empty? || !go%>
+		            <div class="row center-text"><h1>We weren't able to find anything at this time. Please check back later.</h1>
+		                <br>
+		                <%= image_tag("sadface.png", :alt => "sadface" , :style => "width: 20vw; height: auto; padding-top: 16vh;") %>
+		            </div>
+            <% else %>
+                <h1 style="line-height: 1">We've found some opportunities for you...</h1>
+                <%= render 'events/bigCard' %>
+            <% end %>
+        </div>
     </div>
 </div>
