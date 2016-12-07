@@ -92,6 +92,7 @@ class EventsController < ApplicationController
   end
 
   def search
+    # TODO: Replace with more maintainable library option
     @query = params['query']
     @events = Array.new
     @dist = Array.new
