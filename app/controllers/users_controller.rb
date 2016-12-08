@@ -27,17 +27,18 @@ class UsersController < ApplicationController
   # POST /users
   # POST /users.json
   def create
-    @user = User.new(user_params.merge(:confirmed => false))
+    @user = User.new(user_params.merge(confirmed: false))
     respond_to do |format|
-      if @user.email.index("upenn.edu") && @user.save
+      # TODO: Make email validation a validator on the model, not controller
+      if @user.email.index('upenn.edu') && @user.save
         UserMailer.registration_confirmation(@user).deliver
-	      format.html { redirect_to '/login?q=1', notice: '' }
+        format.html { redirect_to '/login?q=1', notice: '' }
         format.json { render :show, status: :created, location: @user }
       else
-        if !@user.email.index("upenn.edu")
-	        @user.errors[:base] << "Must have a upenn.edu email"
-	      end
-	      format.html { render :new }
+        unless @user.email.index('upenn.edu')
+          @user.errors[:base] << 'Must have a upenn.edu email'
+        end
+        format.html { render :new }
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end
     end
@@ -51,7 +52,7 @@ class UsersController < ApplicationController
         format.html { redirect_to @user, notice: 'User was successfully updated.' }
         format.json { render :show, status: :ok, location: @user }
       else
-        format.html { render :template => "users/show"  }
+        format.html { render template: 'users/show' }
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end
     end
@@ -75,6 +76,9 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:username, :email, :password, :password_confirmation, :org_name, :org_url, :org_address, :city, :state, :zipcode, :firstname, :lastname, :confirmed)
+      params.require(:user).permit(:username, :email, :password,
+                                   :password_confirmation, :org_name, :org_url,
+                                   :org_address, :city, :state, :zipcode,
+                                   :firstname, :lastname, :confirmed)
     end
 end

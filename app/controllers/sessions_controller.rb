@@ -13,7 +13,7 @@ class SessionsController < ApplicationController
       session[:user_id] = @user.id
       redirect_to '/'
     else
-      redirect_to '/login', :flash => { :error => "Incorrect username and/or password!" }
+      redirect_to '/login', flash: { error: 'Incorrect username and/or password!' }
     end
   end
 
@@ -24,9 +24,7 @@ class SessionsController < ApplicationController
 
   def confirm
     @user = User.find_by(confirm_token: params[:c])
-    if @user
-      @user.update_attribute :confirmed, true
-    end
-    redirect_to '/login' 
- end
+    @user.update_attribute :confirmed, true if user
+    redirect_to '/login'
+  end
 end
