@@ -24,11 +24,12 @@ input {
     border-right: solid 4px #191C2F;
     border-bottom: solid 4px #191C2F;
 }
-input[type="submit"]{
-    background: #F24901;
-    border: 1px solid #F24901;
+input[type="submit"] {
+    background: #E74C3C;
+    border: none;
     color: white;
-    width: 25%;
     border-radius: 20px;
-
+    padding: 6px 1.5em;
+    margin-left: 1em;
+    font-size: 16px;
 }
