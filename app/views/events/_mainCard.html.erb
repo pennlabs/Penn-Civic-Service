@@ -23,7 +23,7 @@
         </div>
         <div class="row smallRow">
             <br>
-            <span class="orgName"><strong>Causes: </strong></span><br> 
+            <span class="orgName"><strong>Causes: </strong></span><br>
             <%= get_pictures(((event.cause_type.select {|k, v| v.match("1")}).keys)[0..10]).each do |p| %>
                 <%= image_tag( "Icons/" + p, :alt => "rss feed", :class => "tinyIconsTwo speedyAnimation", :animation => "bounceIn") %>
             <% if (p).eql?(get_pictures(((event.cause_type.select {|k, v| v.match("1")}).keys)[0..10]).last) then break end %>
@@ -49,7 +49,7 @@
 	</span>
     </div>
     <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-        <span><%= image_tag( "Icons/locationicon.png", :alt => "rss feed", :class => "calendar speedyAnimation locationPin", :animation => "bounceIn",)%></span>
+        <span><%= image_tag( "Icons/locationicon.png", :alt => "rss feed", :class => "speedyAnimation locationPin", :animation => "bounceIn",)%></span>
         <%= event.location%>
     </div>
     <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
