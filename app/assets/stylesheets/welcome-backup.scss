@@ -1,3 +1,5 @@
+@import "colors";
+
 @mixin vertical-align($position: relative) {
     position: $position;
     top: 50%;
@@ -25,7 +27,7 @@ input {
     border-bottom: solid 4px #191C2F;
 }
 input[type="submit"] {
-    background: #E74C3C;
+    background: $orange-red;
     border: none;
     color: white;
     border-radius: 20px;
