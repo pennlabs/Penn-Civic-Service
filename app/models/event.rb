@@ -6,4 +6,8 @@ class Event < ActiveRecord::Base
   serialize :cause_type, Hash
 
   belongs_to :user
+
+  def url
+    event.url.include?('http') ? event.url : "http://#{event.url}"
+  end
 end
