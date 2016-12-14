@@ -7,7 +7,7 @@ class Event < ActiveRecord::Base
 
   belongs_to :user
 
-  def url
-    event.url.include?('http') ? event.url : "http://#{event.url}"
+  def link
+    url.include?('http') ? url : "http://#{url}"
   end
 end
