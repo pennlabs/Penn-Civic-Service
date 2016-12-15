@@ -17,7 +17,7 @@
             </div>
         </div>
         <div class="bigCardText col-xs-12 col-sm-10 col-md-10 col-lg-10">
-            <%= event.description[0..150] %><br>
+            <%= truncate event.description, length: 150, separator: " " %><br>
         </div>
     <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4">
         <%= image_tag( "Icons/calendar.png", :alt => "rss feed", :class => "calendar speedyAnimation", :animation => "bounceIn",)%>
