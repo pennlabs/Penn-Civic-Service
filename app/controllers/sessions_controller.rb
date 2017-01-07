@@ -24,7 +24,7 @@ class SessionsController < ApplicationController
 
   def confirm
     @user = User.find_by(confirm_token: params[:c])
-    @user.update_attribute :confirmed, true if user
+    @user.update_attribute :confirmed, true if @user
     redirect_to '/login'
   end
 end
