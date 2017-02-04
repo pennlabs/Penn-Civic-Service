@@ -1,38 +1,40 @@
-<nav class="navbar navbar-default" style="background: #FFF; margin-bottom: 0px;">
+<nav class="navbar navbar-default" style="background: #FFF; margin-bottom: 0px; height: 60px;">
     <div style="" class="container-fluid">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-        </button>
-        <div class="navbar-header"><a class="navbar-brand" href="/"><%= image_tag("Icons/pennvolvementlogo.png", :alt => "rss feed", :class => "navIcon")%></a></div>
-        <div id="navbar" class="navbar-collapse collapse">
-            <ul class="nav navbar-nav" style="width: 80%">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" style="padding-top: 19px;" href="/"><%= image_tag("Icons/pennvolvementlogo.png", :alt => "Pennvolvement Logo", :class => "navIcon")%></a>
+        </div>
 
+        <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
                 <% if logged_in? and current_user.id == session[:user_id]%>
                     <li><a href="/events">Opportunities</a></li>
                 <li><a href="/events/new">Create a Post</a></li>
                 <li><a href="/faq">FAQ</a></li>
                 <li><%= link_to 'My Profile', current_user %></li>
                 <li><%= link_to 'Log Out', '/logout', method: :delete, data: { confirm: 'Are you sure?' } %></li>
-            <% else %>
+                <% else %>
                     <% if logged_in? %>
                     <li><%= link_to 'My Profile', current_user %></li>
                 <li><%= link_to 'Log Out', '/logout', method: :delete, data: { confirm: 'Are you sure?' } %></li>
-            <% else %>
+                <% else %>
                     <li><a href="/events">Opportunities</a></li>
                 <li><a href="/faq">FAQ</a></li>
-            <% end %>
-            <% end %>
-                <li style="float: right">
+                <% end %>
+                <% end %>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
                 <form style="padding-top: 9px;" id="tfnewsearch" action="/search" method="get">
                     <input type="text" name="query" class="tftextinput" size="21" maxlength="120" style="height: 30%; border: 1px rgb(221,221,221) solid; border-radius: 10px;">
                     <button type="submit" class="tfbutton" style="text-align: center; margin-left: -40px; border-top: 1px rgb(221,221,221) solid; border-radius: 10px; border-bottom: 1px rgb(221,221,221) solid; border-right: 1px rgb(221,221,221) solid; border-bottom-left-radius: 0px; border-top-left-radius: 0px;"><i class="fa fa-search"></i></button>
-                <%= image_tag("UpennLogo.jpg", :alt => "penn", :style => "height: 37px; width: auto;")%>
-		</form>
-		
-                </li>
+                <a href="http://www.upenn.edu/" target="_blank"><%= image_tag("UpennLogo.jpg", :alt => "UPenn Logo", :style => "height: 37px; width: auto;")%></a>
+                <a href="http://pennlabs.org" target="_blank"><%= image_tag("labsLogo.jpg", :alt => "Penn Labs Logo", :style => "height: 40px; width: auto;")%></a>
+                </form>
             </ul>
         </div>
     </div>
