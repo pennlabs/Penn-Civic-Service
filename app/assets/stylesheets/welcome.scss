@@ -23,8 +23,6 @@ input {
     background: #FFFFFF;
     padding: 5px;
     border-radius: 0px;
-    border-right: solid 4px #191C2F;
-    border-bottom: solid 4px #191C2F;
 }
 input [type="submit"] {
     border: 1px solid #F24901;
@@ -70,4 +68,8 @@ input[type="text"], input[type="password"] {
     border: none;
     padding: 8px 0 4px 12px;
     font-size: 16px;
+    -webkit-transition: all 0.30s ease-in-out;
+    -moz-transition: all 0.30s ease-in-out;
+    -ms-transition: all 0.30s ease-in-out;
+    -o-transition: all 0.30s ease-in-out;
 }
