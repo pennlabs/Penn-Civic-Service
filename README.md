@@ -4,23 +4,23 @@
 
 A volunteer job board for Penn students by Penn Labs.
 
-## Setting Up
-- install RVM (instructions can be found [here.](https://rvm.io/rvm/install))
-- install bundler (`gem install bundler`)
-- install rails (`gem install rails`)
-- clone the project with `git clone https://github.com/pennlabs/Penn-Civic-Service.git`
-- install all the project dependencies (`bundle install`)
-- migrate the database (`rake db:migrate`)
-- additionally to configure email confirmation, install mailx
-- finally, run `rails s`
-- after doing all the setup instructions and running rails s, navigate to localhost:3000
+## Getting Started
+- Install RVM (instructions can be found [here](https://rvm.io/rvm/install)).
+- Install Bundler (`gem install bundler`)
+- Install Rails (`gem install rails`)
+- Clone the project with `git clone https://github.com/pennlabs/Penn-Civic-Service.git`
+- Install all the project dependencies (`bundle install`)
+- Migrate the database (`rake db:migrate`)
+- Additionally, to configure email confirmation, install mailx
+- Finally, run `rails s`
+- After doing all the setup instructions and running `rails s`, navigate to localhost:3000
 
 ## DB Management
-- if you ever need to reset your database, just do `rake db:drop`
-- make sure to migrate after each drop/change to the schema
+- If you ever need to reset your database, just do `rake db:drop`
+- Make sure to migrate after each drop/change to the schema
 
 ## Config Options
-- run `rake routes` to see all the current routes
+- Run `rake routes` to see all the current routes
 
 ## Contributors
 - Joseph Gao, Adam Domingoes, the development team at [Penn Labs](http://pennlabs.org/#team)
