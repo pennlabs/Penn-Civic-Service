@@ -13,27 +13,35 @@
         <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
                 <% if logged_in? and current_user.id == session[:user_id]%>
-                    <li><a href="/events">Opportunities</a></li>
-                <li><a href="/events/new">Create a Post</a></li>
+                    <li><a href="/events">OPPORTUNITIES</a></li>
+                <li><a href="/events/new">CREATE A POST</a></li>
                 <li><a href="/faq">FAQ</a></li>
-                <li><%= link_to 'My Profile', current_user %></li>
-                <li><%= link_to 'Log Out', '/logout', method: :delete, data: { confirm: 'Are you sure?' } %></li>
+                <li><%= link_to 'MY PROFILE', current_user %></li>
+                <li><%= link_to 'LOG OUT', '/logout', method: :delete, data: { confirm: 'Are you sure?' } %></li>
                 <% else %>
                     <% if logged_in? %>
-                    <li><%= link_to 'My Profile', current_user %></li>
-                <li><%= link_to 'Log Out', '/logout', method: :delete, data: { confirm: 'Are you sure?' } %></li>
+                    <li><%= link_to 'MY PROFILE', current_user %></li>
+                <li><%= link_to 'LOG OUT', '/logout', method: :delete, data: { confirm: 'Are you sure?' } %></li>
                 <% else %>
-                    <li><a href="/events">Opportunities</a></li>
+                    <li><a href="/events">OPPORTUNITIES</a></li>
                 <li><a href="/faq">FAQ</a></li>
                 <% end %>
                 <% end %>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <form style="padding-top: 9px;" id="tfnewsearch" action="/search" method="get">
-                    <input type="text" name="query" class="tftextinput" size="21" maxlength="120" style="height: 30%; border: 1px rgb(221,221,221) solid; border-radius: 10px;">
-                    <button type="submit" class="tfbutton" style="text-align: center; margin-left: -40px; border-top: 1px rgb(221,221,221) solid; border-radius: 10px; border-bottom: 1px rgb(221,221,221) solid; border-right: 1px rgb(221,221,221) solid; border-bottom-left-radius: 0px; border-top-left-radius: 0px;"><i class="fa fa-search"></i></button>
-                <a href="http://www.upenn.edu/" target="_blank"><%= image_tag("UpennLogo.jpg", :alt => "UPenn Logo", :style => "height: 37px; width: auto;")%></a>
-                <a href="http://pennlabs.org" target="_blank"><%= image_tag("labsLogo.jpg", :alt => "Penn Labs Logo", :style => "height: 40px; width: auto;")%></a>
+                <form style="padding-top: 9px;" class="form-inline" id="tfnewsearch" action="/search" method="get">
+                  <div class="form-group">
+                  <div class="input-group">
+                    <input type="text" name="query" id="tftextinput" size="21" maxlength="120">
+                    <!-- <div class="input-group-addon"> -->
+                      <!-- <button type="submit" ></button> -->
+                      <span class="input-group-btn">
+                        <button type="submit" id="search-btn" class="btn btn-default"><i class="fa fa-search"></i></button>
+                      </span>
+                    <!-- </div> -->
+                    </div>
+                  </div>
+                  <a href="http://pennlabs.org" target="_blank"><%= image_tag("labsLogo.jpg", :alt => "Penn Labs Logo", :style => "height: 40px; width: auto;")%></a>
                 </form>
             </ul>
         </div>
