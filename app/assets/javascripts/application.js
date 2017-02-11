@@ -50,6 +50,17 @@ $(document).ready(function() {
 		}
 	}
 
+	if ($("#tftextinput").is(":focus")) {
+	  $("#search-btn").addClass("focus");
+	} else {
+		$("#search-btn").removeClass("focus");
+	}
 
+	$('#tftextinput').blur(function() {
+        $('#search-btn').removeClass("focused").addClass("not-focused");
+      })
+      .focus(function() {
+        $("#search-btn").addClass("focused").removeClass("not-focused")
+      });
 
 });

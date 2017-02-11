@@ -41,6 +41,13 @@
     font-family: 'MuseoSlab-500';
 }
 
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+
 #mainnav {
     background: #FFFFFF;
     font: 1.3em;
@@ -49,7 +56,7 @@
     border-bottom: 5px solid #D1D1D0;
 }
 .navbar-default .navbar-nav>li>a {
-    font-family: 'MuseoSlab-500';
+    font-family: 'AvenirLTStd-Book';
 }
 #body {
     height: 100%;
@@ -60,13 +67,34 @@ html {
     height: 100%;
 }
 
+input:focus {
+    border: 1px solid rgb(22,160,133);
+    box-shadow: 0 0 5px rgb(22,160,133);
+    -webkit-transition: all 0.30s ease-in-out;
+    -moz-transition: all 0.30s ease-in-out;
+    -ms-transition: all 0.30s ease-in-out;
+    -o-transition: all 0.30s ease-in-out;
+}
 
-/*
-.center {
-    position: relative;
-    top: 50%;
-    transform: translateY(-50%);
-}*/
+.focused {
+    border: 1px solid rgb(22,160,133);
+    box-shadow: 0 0 5px rgb(22,160,133);
+    outline: none !important;
+    border-left: none;
+    -webkit-transition: all 0.30s ease-in-out;
+    -moz-transition: all 0.30s ease-in-out;
+    -ms-transition: all 0.30s ease-in-out;
+    -o-transition: all 0.30s ease-in-out;
+}
+
+.not-focused {
+  outline: none !important;
+  -webkit-transition: all 0.30s ease-in-out;
+  -moz-transition: all 0.30s ease-in-out;
+  -ms-transition: all 0.30s ease-in-out;
+  -o-transition: all 0.30s ease-in-out;
+}
+
 .center-text {
     text-align: center;
 }
@@ -84,15 +112,34 @@ html {
     background-color:#c3dfef;
 }
 #tfnewsearch{
-    float:right;
+    float: right;
+    padding-top: 11px;
 }
-.tftextinput{
-    margin: 0;
-    padding: 5px 15px;
-    font-size:14px;
-    border:1px solid #0076a3; border-right:0px;
-    border-top-left-radius: 5px 5px;
-    border-bottom-left-radius: 5px 5px;
+#tftextinput{
+  height: 34px;
+  width: 200px;
+  border: 1px #B3B3B3 solid !important;
+  border-radius: 10px 0 0 10px !important;
+  margin: 0;
+  padding: 5px 15px !important;
+  font-size:14px;
+}
+#navbar-style {
+  background: #FFF;
+  margin-bottom:
+  0px; height: 60px;
+}
+#search-btn {
+  border-radius: 0 10px 10px 0;
+  border: 1px #B3B3B3 solid !important;
+  border-left: none;
+}
+#labs-logo {
+  height: 35px;
+  width: auto;
+  margin-right: 15px;
+  margin-left: 5px;
+  padding-bottom: 2px;
 }
 .tfbutton {
     margin: 0;
@@ -104,6 +151,14 @@ html {
     text-decoration: none;
     color: black;
     border-bottom-right-radius: 5px 5px;
+
+    margin-left: -40px;
+    border-top: 1px rgb(221,221,221) solid;
+    border-radius: 0 0 10px 10px;
+    border-bottom: 1px rgb(221,221,221) solid;
+    border-right: 1px rgb(221,221,221) solid;
+    border-bottom-left-radius: 0px;
+    border-top-left-radius: 0px;
 }
 .tfbutton::-moz-focus-inner {
     border: 0;
@@ -320,7 +375,7 @@ div.bigCardTitle a{
     font-size: 14pt;
 
 }
-.navIcon {
+#nav-icon {
     margin-top: -3px;
     height: 25px;
 }
@@ -357,7 +412,8 @@ input[type="submit"] {
 #leftPanel {
     float: left;
     width: 50%;
-    height: 60vh;
+    min-height: 490px;
+    height: 70vh;
     background-color: #1ABC9C;
     text-align: center
 }
@@ -370,7 +426,8 @@ input[type="submit"] {
 #rightPanel {
     float: right;
     width: 50%;
-    height: 60vh;
+    min-height: 490px;
+    height: 70vh;
     background-color: #16A085;
     padding-top: 1vh
 }
@@ -385,7 +442,8 @@ input[type="submit"] {
     padding-top: 70px;
 }
 #signUpButtonGroup {
-    width: 300px
+    width: 300px;
+    margin-bottom: 15px;
 }
 #loginButton {
     min-width: 100px;
@@ -396,32 +454,33 @@ input[type="submit"] {
 }
 #fbBtnLink {
     font-size: 32pt;
-    color: #3572FF;
+    color: #3b5998;
     text-decoration: underline
 }
 .socialBtn {
     background-color: white;
     width: 80px;
     height: 80px;
+    margin-top: 20px;
     border-radius: 40px;
     line-height: 85px
 }
 #twtrBtnLink {
     font-size: 32pt;
-    color: #01CEC1;
+    color: #00aced;
     text-decoration: underline
 }
 #gPlusBtnLink {
     font-size: 32pt;
-    color: #FF3564;
+    color: #d34836;
     text-decoration: underline
 }
 #categories {
     display: inline-block;
     width: 100%;
-    min-height: 180px;
+    min-height: 300px;
     background-color: #FFFFFF;
-    height: 36%
+    height: 36vh;
 }
 #categoryText {
     padding-left: 30px;
@@ -439,4 +498,20 @@ input[type="submit"] {
 }
 .textCenter {
     text-align: center
+}
+#footer {
+  height: 58px;
+  text-align: center;
+  padding-top: 19px;
+}
+
+@media(max-width: 1076px) {
+    #tfnewsearch {
+        display: none;
+    }
+}
+@media (min-width: 768px) {
+    .navbar-nav>li {
+        padding-top: 5px;
+    }
 }

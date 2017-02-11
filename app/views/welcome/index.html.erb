@@ -1,32 +1,29 @@
 <div>
-    <div id="leftPanel" class="parent-bottom">
-        <div class="center"><h1 id="panelText">Be a friend. Lend a hand.</h1></div>
-        <div class="center child-bottom child-bottom-center"><%= image_tag('Icons/hands.png', :style => "padding-top: 76px; width: 20vw; height: auto")%></div>
+  <div id="leftPanel" class="parent-bottom">
+    <div class="center"><h1 id="panelText">Be a friend. Lend a hand.</h1></div>
+      <div class="center child-bottom child-bottom-center"><%= image_tag('Icons/hands.png', :style => "padding-top: 76px; width: 20vw; height: auto")%></div>
     </div>
     <div id="rightPanel" class="parent-bottom" >
-        <div class="center" id="rightPanelForm">
-            <% if not logged_in? %>
-                <center><p id="signUpText">Sign up to post your opportunities today.</p></center>
+      <div class="center" id="rightPanelForm">
+        <% if not logged_in? %>
+            <center><p id="signUpText">Sign up to post your opportunities today.</p></center>
             <br>
             <center>
                 <%= form_tag("/signup", method: "post") do %>
-                    <%= text_field_tag(:first_name, nil, placeholder: "First name") %>
+                <%= text_field_tag(:first_name, nil, placeholder: "First name") %>
                 <br>
                 <%= text_field_tag(:last_name, nil, placeholder: "Last name") %>
                 <br>
-                <%= text_field_tag(:user, nil, placeholder: "Username") %>
+                <%= text_field_tag(:user, nil, placeholder: "Username/Email") %>
                 <br>
                 <%= password_field_tag(:pass, nil, placeholder: "Password") %>
                 <br>
                 <div id="signUpButtonGroup">
-                    <a id="loginButton" href="/login">Switch to Login</a>
                     <%= submit_tag("Sign up!", :style => "text-align: center") %>
                 </div>
-            </div>
-            <div class="child-bottom">
-                <a href="http://pennlabs.org/"><%= image_tag("labs.png", :alt => "labs" , :style => "width: 128px; height: auto; padding: 10px;") %></a>
-            </div>
-        </center>
+                <a id="loginButton" href="/login">Already registered? Log in</a>
+              </div>
+            </center>
     <% end %>
     <% else %>
             <div class="contact_form">
@@ -34,9 +31,11 @@
             <center>
                 <br>
                 <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 col-xs-offset-3 col-sm-offset-3 col-md-offset-3 col-lg-offset-3">
-                    <a id="fbBtnLink" href="http://www.facebook.com/sharer.php?u=http://www.pennvolvement.com" target="_blank"><div class="socialBtn">
+                  <a id="fbBtnLink" href="http://www.facebook.com/sharer.php?u=http://www.pennvolvement.com" target="_blank">
+                    <div class="socialBtn">
                         <center><i class="fa fa-facebook-official"></i></center>
-                    </div></a>
+                    </div>
+                  </a>
                 </div>
                 <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 col-xs-offset-1 col-sm-offset-1 col-md-offset-1 col-lg-offset-1">
                     <div class="socialBtn">
@@ -59,7 +58,7 @@
 </div>
 <div id="categories">
     <div class="container">
-        <span id="categoryText"><h3>If you're just looking, start your search here ...</h3></span>
+        <span id="categoryText"><h3>If you're just looking, start your search here...</h3></span>
         <div id="categoryBtns">
             <div class="textCenter col-sm-2 col-md-2 col-lg-2 col-xs-2 col-xs-offset-1 col-sm-offset-1 col-md-offset-1 col-lg-offset-1"><a href="/search?query=community"><%= image_tag('Icons/community.png', :alt => "rss feed", :class => "icons")%></a><br><center>Community</center></div>
             <div class="textCenter col-sm-2 col-md-2 col-lg-2 col-xs-2" ><a href="/search?query=hunger"><%= image_tag('Icons/hunger.png', :alt => "rss feed", :class => "icons")%></a><br><center>Hunger</center></div>
